@@ -1,0 +1,296 @@
+
+/////////////////////////////////////////////////////////
+// Semantic Lexicon
+//
+// csv for the most part, plurals with the first word using |
+//     a "word cloud" around each word for creating training data
+//     these nouns are roughly ranked by frequency and each line of
+//     a word is a different sense of that word.
+//
+// started by: Peter de Vocht 19 February 2017
+//
+/////////////////////////////////////////////////////////
+
+bank|banks,money,accumulation,savings bank,coin bank,money box,,assets,facility,facilities,installation,strongroom,institution,institutions,establishment,industry,banking concern,banking company,central
+bank|banks,elevation,geological formation,formation,river,rivers,natural elevations,edge,embankment,rim,water,plant,plants,tree,trees,canal,slope,slopes,inclines,incline,rise
+
+house|houses,lineage,line,descent,bloodline,blood line,blood,pedigree,ancestry,origin,origins,parentage,parentages,stock,stocks,family,families,clan,clans,tribe,tribes
+house|houses,lodgings,housing,lodging,accommodation,structure,structures,construction,room,rooms,accommodations,floor,level,levels,storey,story,stories,refuge,sanctuary,asylum,family,household,households,home,homes
+house|houses,government,gathering,assemblage,following,followers,follower,administration,governance,governing body,establishment,brass,organization,organizations,organisation,organisations,governments,minister,ministers,prime minister
+
+second,time,measure,measures,quantity,quantities,amount,amounts,sec,period,periods,moment,moments,minute,minutes,second,seconds,bit,instant,instants,day
+second,position,status,positions,first,third,sequence,sequences,helping,supporting,place,places,runner-up,runners-up,race,running,ran,runs,run,sport,event,events,sports
+
+protection,safeguard,act,support,enforcement,felony,felonies,insurance,insurances,strength,strengths,charge,charges,safety
+protection,barrier,protective covering,coverings,protective cover,safety,shelter,shelters,covers,cover,conservation,barriers,camouflage,screen,screens,shield,shields,umbrella,umbrellas
+
+age|ages,time period,period,past,past times,yesteryear,yore,pre historic,aeon,chain,eon,orbit,period,periodicity,evolution,rotation,sequel,sequence,series,succession,wheel,Cambrian,Jurassic
+age|ages,maturity,time of life,old age,years,long time,life,adolescence,adulthood,milestone,seniority,middle age,teenager,teenagers,life,youth,youths,elder,tender,ripe,old,young,baby,infant,toddler
+
+gold,noble metal,valuable,metal,alloy,mineral,foil,gold foil,precious metal,Au,atomic number,atom,atomic,atoms,value,money,silver,nuggets,iron,mine,treasure
+gold,colour,chromatic color,chromatic colour,spectral color,spectral colour,color,colors,colours,yellow,bright,orange,gilt,aurous,gilded,bright,red,blue,green
+
+way|ways,manner,mode,style,fashion,deed,feat,effort,exploit,exploits,means,decision,decisions
+way|ways,road,state,travel,traveling,travelling,roads,path,paths,line,direction
+
+fund|funds,income,net income,net,net profit,lucre,profit,profits,earnings,store,stock,capital,wealth,money,bank,banks
+fund|funds,investment company,financial institution,financial organization,financial organisation,investment trust,investment firm,company,organization,organisation,treasury
+
+habit|habits,custom,use,usage,utilization,utilisation,employment,exercise,substance abuse,drug abuse,mode,nature,pattern,quirk,addiction,bias,smoking,routine,bad,good
+habit|habits,clothing,clothes,dress,gown,pants,pant,article of clothing,vesture,wear,wearable,habiliment,make-up,fashion,wear,wearing,wore,worn,wears,dressing,dressed,gowns
+
+view|views,perspective,attitude,mental attitude,position,aspect,prospect,limit,opinion,thought,goal,sentiment,persuasion
+view|views,scene,vista,panorama,window,art,fine art,painting,paintings,aspect,picture,television,televisions,room,world
+
+spring,time period,period of time,period,equinox,winter,summer,autumn,springtime,blossom,harvest
+spring,fountain,natural spring,water,well head,spa,geyser,thermal spring,well,well spring,fount,waterfall,wet,dry
+spring,stretch,device,actuation,leap,leaping,bounce,bound,hop,vault,jump,recoil,resilience,elasticity,flexibility,stretching
+
+account|accounts,statement,report,speech act,account,interrogation,examination,evidence,story,stories,news report,reports,information,write up,writing,writings,information,info,description,version,narration,explanation,exposition
+account|accounts,balance sheet,commercial document,accounting,account statement,bill,invoice,book,ledger,ledgers,journal,books,journals,balance sheets
+
+life,existence,state,animation,living,aliveness,lifetime,life-time,lifespan,time period,natural phenomenon,validity,duration,world,reality,rat race
+life,being,organism,human,person,man,woman,soul,creature,souls,creatures,men,women,humans,beings,human being,human beings,individual,growth,entity,vivacity,zest,vigor,breath,breathing
+life,sentence,term,prison,jail,lockup,can,cooler,reformatory,penal institution,judgement,judge,jury,law,lawyer,term,verdict,penalty
+
+section|sections,book,chapter,part,dictionary,edition,essay,writing,write,wrote,writes,dissertation,omnibus,magazine,magazines,paragraph,chapters,sentence,sentences,pen,paper,pencil,pens,papers,research,chemistry,enrollment,academic,code,information,catalog,lab,school,department,law,student,students,education,engineering,board,physics,biology,university,sciences,article,arts,student,data,page,information,application,applications,document,documents,programs,fees,studies
+section|sections,housing,plot,area,estate,house,manor,property,parcel,real estate,houses,manors,areas,bathroom,door,window,windows,doors,bathrooms,garage,garages,grass,tree,trees,residential,waste,compost,composting,authority,authorities,consumer,consumers,hazard,hazards,township,valley,trail,county,residents,resident,hartland,delta,river,roof,roofs,roofing,address,maple,grove,flooding,flood,floods,road,state,construction,constructions,city,cities,standards,building
+section|sections,orchestra,music,symphony,ensemble,troupe,philharmonic,flute,flutes,piano,tuba,trumpet,trumpets,violin,violins,viola,violas,cello,double bass,bass,drum,drums,conduct,conductor,conductors
+section|sections,military,force,unit,units,secret,soldier,soldiers,commando,paratrooper,pilot,trooper,veteran,cadet,conscript,conscripts,guerrilla,marine,marines,officer,officers,outfit,regiment,regiments
+section|sections,company,companies,commercial,commercials,projects,project,amount,risk,retained,retain,retains,retaining,risk,arriving,finding,relating,additional,capital,net,assets,asset,requirements,requirement,amend,amended,relating,reports,required,submitted,captive,insurance,company,director,require,economizer,replacement,replacements,economy,economies,chemical,product,manufacture,management,business,work,development,department,office,financial,financials,states,compliance,federal,network,networking,networks,networked,employment,employer,employee,employers,employees,executive,executives,account,accounts
+section|sections,population,alcoholic,beverages,alcoholics,beverage,person,violated,violate,violates,violating,people,men,man,women,woman,believe,believed,believes,believing,soil,soils,food,production,fertility,author,authors,chronic,eyes,skin,irritation,irritations,eye,inhalation,ingestion,ingredient,ingredients,expose,exposure,health,system,program,government,committee,planning,social,services,state,national,policy,government,law
+
+fruit,plant,produce,green goods,green groceries,truck,green,crop,crops,greens,cake,candy,confection,cookie,pastry,pie,sweet,sweets,tart,tarts,desert,deserts
+fruit,creation,invention,output,preparation,spinoff,stock,work,concoction,create,labour,labor,labours,labors,effort,efforts,inventions,sweat,input
+
+work,effort,activity,endeavor,action,actions,industry,endeavors,job,jobs,performance,production,struggle,task,tasks,grind,grindstone,muscle,push,servitude,stint,stress,sweat,toil,undertaking
+work,workplace,shop,store,room,office,place,location,employment,station,company,bureau,department,departments,firm,firms
+
+scene|scenes,painting,image,picture,icon,ikon,show,shot,art,fine art,paintings,painter,painters,artist,artists,seascape,landscape,seascapes,landscapes
+scene|scenes,play,writing,written material,curtain,epilogue,piece,show,plays,shows,musical,book,books,chapter,paragraph,sentence,line,lines,paragraphs,chapters,actor,actors,actress,actresses,director,directors,location,area,setting,arena,place
+scene|scenes,altercation,happening,occurrence,anger,choler,ire,spectacle,exhibition,shout,shouting,shouted,shouts,angry,beef,bickering,blowup,bone,brawl,clash,clashes,brawls,feud,fuss,hassle,ruckus,row,scrap,spat,squabble,stew,tiff,words,wrangle
+
+trailer|trailers,promotion,publicity,promotional material,packaging,movie,movies,film,films,actor,actors,director,directors
+trailer|trailers,housing,vehicle,truck,motortruck,trailer,container,house trailer,lodging,living accommodations,trash,house,poor,lives
+
+cup|cups,drinking,tableware,liquid unit,liquid measure,drink,drinks,lemonade,juice,water,milk,coke,sprite,drunk,bowl,mug,beaker,chalice,draught,goblet,teacup,tea,coffee,vessel
+cup|cups,award,accolade,honor,honour,laurels,gift,gold,trophy,trophies,ceremony,awards,honors,honours,gifts,bestow,bestowed,awarded,gold star,badge,honor,honour
+
+resolution|resolutions,writing,declaration,resolve,message,content,subject,decree,law,statute,decrees,decreed,essay,study,exposition,paper,note,write,wrote,writing,writes,paper,notes
+resolution|resolutions,choice,selection,option,pick,answer,decision,verdict,decide,deciding,decided,courage,guts,heart,will,decision,determination,reason,reasoned,reasoning,test,testing,tested,tests,investigation,investigate,investigated,clarification,clarify,clarified,clarifying
+resolution|resolutions,music,consonant,dissonant,sound,composition,composer,conductor,dissonance,consonance,chord,pleasant,chord,chordal,structure,composers,sounds,cacophony,recording,records,CD
+
+help,serve,servant,assist,assistant,assists,butler,maid,maids,butlers,boy,girl,man,woman,boys,girls,men,women,supply,supplied,supplies,supplying,comfort,benefit,benefits,bow,bowing,bowed,bows,suit,pamper
+help,aid,usefulness,utility,advice,adviced,advising,advised,guide,guidance,guided,guiding,support,supports,supported,supporting,guides,assist,assisted,assisting,assists,convenience,break,broke,broken,breaks,
+
+output,creation,industry,create,created,creating,industrious,creative,prolific,yield,manufacture,manufacturing,manufactured,manufactures,production,measure,turnout,outturn,achievement,achievements,making,make,made,makes,waste,squander,outlay,cost,costs,application,applications
+output,profit,amount,amounts,profits,budget,budgets,budgeting,budgited,charge,charging,loan,loans,mortgage,mortgages,sum,sums,surcharge,surcharges,upkeep,value,worth,values,outlay,outlays,debit,debits,debt,debts,investment,investments
+output,communication,signal,transmission,transmissions,conversation,conversations,interchange,interchanges,talk,talking,talks,talked,quiet,silent,noisy,noise,distinct,caution,buzzer,blast,bell,bells,blasts,gong,gongs,trumpet,trumpets,whistle,whistles,yell,yelling,yelled,yells,SOS,alert,alerted,alerting,alerts
+
+room|rooms,structure,level,light,place,places,area,areas,house,houses,office,offices,inside,accommodate,accommodations,bed,beds,desk,desks,lighting,lit,box,boxes,caboose,shed,sheds,shelter,shelters,chalet,chalets,camp,camps,alcove,enclosure,flat,hall,pocket,socket,outlet
+room,vastness,volume,accommodation,bulk,burden,compass,contents,amplitude,dimension,dimensions,roomy,range,ranges,reach,scope,space,spaces,extent,extents,magnitude,magnitudes
+room,possibility,possibleness,prospect,prospects,circumstance,circumstances,hope,hoping,hoped,hopes,opportunity,opportunities,happning,happenings,potential,practical,occassion,liability,incident,incidents
+
+time,clock,watch,second,seconds,minute,minutes,hour,hours,day,days,year,years,century,centuries,night,nights,week,weeks,interval,intervals,instant,chronology,season,seasons,generation,clock,clocks,moment,moments,event,events,happening,generations,life,future,space,age,ages,span,space-time,term,terms
+time,prison,sentence,jail,jails,confinement,lockup,penitentiary,bastille,cooler,slammer,stockade,penal institution,correctional institution,cage,coop,cages,dungeon,dungeons,cell,cells,judge,judgement,condemnation,verdict,verdicts,guilt,guilty,punish,punished,punishing,punished,accuse,accused,accusing,reproach,convict,framed,frame,imprison,imprisoned,imprisons
+
+net,network,ethernet,wifi,wireless,networks,wire,wires,internet,device,mesh,meshing,meshes,connect,connection,connections,web,grid,wiring,firewall,computer,computers,screen,monitor,monitors,display,displays,monitoring
+net,gain,finance,finances,financial,income,net income,profit,profits,lucre,earning,earnings,assets,asset,money,dollar,dollars,office,offices,company,shareholder,shareholders,companies,yield,yields,bond,bonds,share,shares
+net|nets,game,football,field,track,soccer,tennis,equipment,player,players,sport,sports,athletics,games,ball,balls,play,player,playing,players,throw,catch,cathing,throwing,kick,kicking,kicked,kicks,catcher,catchers,goal,goals
+
+german|germans,person,inhabitant,citizen,man,woman,boy,girl,men,women,boys,girls,guy,gal,indentity,personage,personality,spirit,mortal,party,being,creature,creatures,customer,customers,tourist,tourists,visitor,visitors,foreign,foreigner,foreigners
+german,language,spoke,speak,speaking,speaks,languages,sound,sounds,sounded,sounding,dialect,dialects,jargon,speech,voice,voices,word,words,book,books,paper,papers,literature,movie,movies,vocabulary,terminology
+
+society|societies,organisation,organisations,company,companies,group,groups,body,bodies,association,associations,management,institution,institutions,system,systems,framework,form,forming,forms,formed,structure,structuring,structured,structures
+society|societies,class,classes,upper class,upper,high,high society,lower,status,social order,jungle,zoo,jungles,rat race,culture,cultures,civilization,civilizations,courtly,court,courts,king,kings
+
+rock|rocks,stone,matter,material,sedimentary,sedimentary rock,metal,gem,gems,metals,grain,gravel,boulder,boulders,crag,crags,jewel,jewels,ore,stonework,masonry,build,building
+rock,music,rock-and-roll,rock and roll,rock music,rhythm,beat,popular,soft rock,hard rock,tune,tunes,rap,opera,melody,melodies,sing,sung,sings,singing,soul,harmony,refrain,measure,measures
+rock,movement,motion,move,motility,change,direction,drift,drifting,stir,stirring,sway,swaying,travel,travelling,travels,wave,weave,weaving,swing,swung,swings,swinging
+
+outline|outlines,extremity,lineation,figure,feature,features,look,looks,looking,looked,image,images,face,faces,screen,shape,shapes,stamp,stamps,pose,poses,guise,front,back,expression,expressions
+outline|outlines,synopsis,recap,rundown,abstract,rundowns,recapitulation,recapitulations,condensation,review,reviews,resume,abridged,abridge,abridgement,outlines,sketch,sketches,estimate,estimates,presentation,presentations
+outline|outlines,thought,idea,blueprint,draft,diagram,diagrams,drafts,blueprints,ideas,think,thinking,thought,thinks,reflection,reflections,speculate,speculation,speculations,judge,judgeing,judged,regard,ragards,regarded,regarding,realize,realizing,realizes,realized
+
+position|positions,view,attitude,perspective,posture,luck,leverage,favor,favors,favour,favours,blessing,blessings,support,supports,outlook,aim,perspectives,postures,slant,standpoint,viewpoint,approach,aspect
+position|positions,status,duty,stead,seat,seats,duties,station,presitge,prestigious,start,starting,end,ending,finish,finished,second,first,third,fourth,fifth,supremacy,array,arrays,rank,ranking,rankings
+position|positions,location,place,spot,area,areas,places,spots,locations,ground,grounds,locale,locales,locus,whereabouts,mail,address,addresses,house,home,homes,houses,city,cities,country,countries,building,buildings,road,roads,highway,highways,space,setting,settings,region,regions,surroundings,surrounding
+
+left,position,south,north,west,east,portside,location,turn,turns,turned,turning,direction,directions,map,maps,move,moving,moved,moves,hand,hands,left handed,right handed
+left,politics,liberal,progressive,advanced,broad,free,general,radical,loose,tolerant,rational,clever,smart,reason,reasonable,rationality,progress,politician,state,statesman,communist,communism,intelligence,intelligent,Stalin,Marx,Marxist,guerila,guerilas,politician,parliament,president,presidents
+left,alone,abandoned,abandon,deserted,desert,homless,isolated,secluded,desolate,destitude,apart,seclude,hide,hiding,hid,hides,remaining,remain,remains,remained,victim,victims,lonely,loner,singular,lone,odd
+
+plan|plans,idea,brain,brains,solution,solutions,fail,failed,fails,failing,schedule,schedules,scenario,scenarios,ideas,master plan,game plan,proposal,proposals,agenda,agendas,strategem,strategy,strategies
+plan|plans,architectural plan,architecture,design,designs,blue print,print,prints,building,buildings,house,houses,housing,town,towns,city,cities,diagram,chart,charts,diagrams,chart,charts
+
+tone|tones,sound,loud,quiet,noise,noises,volume,volumes,cacophony,sounds,voice,voices,music,notation,notations,musical,orchestra,orchestras,instrument,instruments,sheet music,symphony,symphonies,violin,violins,viola,violas,cello,celli,bass,basses,soprano,sopranos,alto,altos,tenor,tenors,trumpet,trumpets,trombone,trombones,harp,harps,piano,pianos,timpani,drum,drums,celesta,oboe,clarinet,clarinets
+tone|tones,feeling,behave,behaviour,sense,sensation,feelings,character,attitude,attitudes,violent,violence,behaved,behaving,mood,moods,felt,feels,temper,tempers,humour,humorous,tempered,joke,jokes,joked,joking,mock,mocked,mocking
+
+executive|executives,head,top dog,executive director,ceo,board,CIO,CTO,business,company,organisation,companies,office,offices,manager,managers,boss,bosses,employer,employee,employers,employees
+executive|executives,minister,parliament,government,politics,politician,politicians,left wing,right wing,governor,governors,administration,legislature,law,laws,rule,rules,president,presidents,policy,policies,regulatory,judge,judges,capital
+
+red,color,colour,coloring,colouring,redness,crimson,orange,yellow,green,blue,mauve,paint,painting,wall,walls,house,houses,roof,roofs,flaming,glowing,glows,glowed,cherry,pink,cherries,wine,wines,spectrum,rainbow,morning,dawn,dusk,traffic light,sign,signs,red-hot,hot,bloody,blood,rosy,cheek,cheeks
+red,losses,red ink,assets,loss,asset,negative,balance,balances,default,disaster,disasters,bankruptcy,default,defaults,defaulting,defaulted,income,insolvency,sum,sums,total,totals,ruin,ruined,Chapter 11
+
+production|productions,play,stage,actor,actors,actress,actresses,curtain,curtains,Shakespeare,Hamlet,write,written,wrote,writing,line,lines,staging,authoring,author,playwright,playwrights,drama,dramas,Broadway,dramatization,footlights,understudy
+production|productions,yield,quantity,amount,output,activity,enterprise,commercial enterprise,business enterprise,business,busininesses,create,created,creating,creates,increase.decrease.assembly,construction,product,good,goods,work,works,piece,pieces
+
+editor|editors,newspaper,worker,editor in chief,newspapers,editorial,paragraph,paragraphs,paper,papers,journalist,edition,editions,journalists,commentator,media,reporter,reporters,news,press,newsprint
+editor|editors,computer program,program,programme,engineering,software,application,applications,hacker,hackers,PC,mac,home computer,RAM,CPU,microcomputer,micro,text,text file,file,files,VIM,VI,nano,word,wordpad,notepad,emacs,gedit
+
+power,battery,AC,DC,socket,outlet,direct current,alternating current,direct,alternating,batteries,car,cars,station,stations,wire,wires,wiring,wired,electricity,failure,outage,outages,supply,supplies,transformer,transformers,overhead,underground,Tesla,Edison,Franklin,lightning,storm,storms
+power,idea,business,executive,top,minister,politics,pen,sword,gun,guns,swords,pens,baron,businesses,conglomerate,group,groups,ideology,ideologies,idea,ideas,hungry,wield,wielding,wields,president,presidents,country,countries,politician,politicians,people,person,man,men,woman,women
+
+care,aid,help,helping,aiding,attention,tending,tend,tended,helped,helps,aided,maintenance,maintain,upkeep,guardian,charge,control,controls,influence,influences,patronage,patronages,sponsor,sponsorship
+care,emotion,affliction,aggrevation,blessing,calm,calming,calmed,calms,emotions,aggrevating,heed,close,closeness,anxiety,angst,anxiousness,doubt,doubts,dread,shake,shakes,shiver,shivers,suffering,suffer,suffers,suffered,relief
+
+bed|beds,furniture,furnishing,pad,sleep,slept,sleeps,sleeping,love,lover,lovers,loved,sheet,sheets,blanket,blankets,warm,cold,post,posts,naked,nude,nudity,night,nights,morning,mornings,sick,home,homes,room,rooms,house,houses,couch,bassinet,mattress,bunk,cot,bunks,cots
+bed|beds,river,river bed,stream,streams,water,rivers,bank,banks,tree,trees,grass,boat,boats,dry,estuary,creek,watercourse,waterway,brook,ditch,ebb,tide,flow,flowing,flowed,flows
+
+heart|hearts,organ,vascular system,artery,arteria,arterial blood vessel,pump,ticker,muscle,muscular tissue,valve,structure,anatomical structure,body,blood,attack,infarct,vascular,doctor,hospital,ambulance,doctors,ambulances,sick,sickness,disease,nerves,nerve,pain,painful,pains,arm,leg,lungs,chest,lung,nurse,nurses,patient,patients
+heart,spirit,impression,feeling,belief,notion,opinion,noble,heart and soul,soul,warm,warmness,character,characters,kind,kindness,kindly,nature,temperament,tender,tenderness,understand,understanding,understood,understands,feelings,love,loved,loving,loves,in love,blind,opinions,belief,beliefs,warmest,warming,sympathy,sympathetic,desire,desires,desired,moral,morals
+heart,central,region,center,centre,middle,core,data,proof,proofs,rudiment,rudimentary,problem,problems,solution,solutions,substratum,principle,reason,reasons,root,fundamental,fundamentals,key,keys,cause,causes,axiom,authority,background,law,laws,theory,theorem,theories,postulate,nucleus,source,sources
+heart|hearts,cards,game,card,spades,spade,club,clubs,diamond,diamonds,jack,queen,king,bauer,black jack,black,red,21,dealer,casino,dealers,croupier,croupiers,casinos,gamble,gambling,gambled,gambles,luck,lucky,lunckiest,deal,dealing,dealt,hand,hands,deals,odds,money,lose,lost,losing,loses,win,winning,won,wins,dice,wager,wagers,poker,bet,betting,bets,twenty one
+
+anchor|anchors,ship,board,ships,boats,craft,ballast,bow,starboard,grip,hook,mooring,secure,stay,fishing,cruise,cruising,sea,ocean,oceans,seas,water,waters,lake,lakes,river,rivers,drop,dropped,dropping,drops,sail,sailing,sails,sailed,travel,travels,travelled,mast,masts,steam,steamboat,steamboats,stop,halt
+anchor|anchors,newsman,reporter,newsperson,announcer,columnist,copy editor,correspondent,editors,correspondents,paper,papers,news,newscaster,newscast,broadcast,newswriter,newswriters,media,TV,channel,channels,journalist,station,stations,TV station,TV stations,night,breakfast,weather,interview,interviews,live,interviewer,interviewers
+
+band|bands,ring,adornment,circle,rings,jewelery,jeweller,jewellers,wedding,engagement,wed,weddings,exchange,vow,vows,rings,gold,silver,platinum,marry,married,marries,marrying,chastity,chaste,friendship,divorce,divorced,divorcing,divorces
+band|bands,music,guitar,guitars,drum,drums,music,play,played,plays,playing,perform,performer,rock,rockstar,rocked,rocking,rocks,disco,funk,country,blues,song,song writer,sang,sings,sung,singing,vocal,vocals,choir,choirs,bass,basses
+
+order|orders,command,form,rule,document,paper,documents,papers,decree,obey,obeys,certificate,cerftificates,page,pages,script,scripts,statute,regulation,regulations,dictum,direction,directions,march,marching,marches,commands,give,giving,gave,gives
+order|orders,orderliness,state,align,group,grouped,grouping,groups,structure,method,methods,madness,uniform,uniformity,symmetry,symmetric,setup,series,layout,lineup,layouts,harmony,array,arrays,aggregation,aggregate,assemble,assemblage
+order|orders,law,legal document,legal,lawyer,lawyers,judge,judges,court,courts,supreme court,municipal court,country,legislation,legislative,barrister,barristers,QC,queens council,crime,crimes,riot,riots,prison,prisons,prisoner,prisoners,amendment,edict,judgement,subpoena,writ,verdict,warrant
+order|orders,Holy Order,clergyman,reverend,man of the cloth,church,churches,priest,priests,Catholic,Protestant,Anglican,pope,father,padre,bishop,bishops,religion,religions,religeous,holy,Christ,muslim,muslims
+
+direction|directions,way,line,lines,ways,travel,travelled,travels,travelling,steer,steering,guidance,guide,guides,guided,track,tracks,tracked,tracking,bearing,drift,drifted,drifting,course,vector,vectors,tack,tacking,tacked,tacks,bending,bend,bends,straight,left,right,up,down,back,forward,forwards,backwards,backward,address,location,addresses,locations,city,cities,town,towns,road,roads,center,centers
+direction|directions,plan,planned,plans,planning,communication,program,programme,counsel,counseling,counselling,focus,focusing,focal point,order,control,orders,government,governments,minister,supervision,supervisor,supervisors,administration,administrations,leader,leadership,leaders,business,businesses,board,boards,company,companies,CEO,roadmap,roadmaps,oversight
+
+
+appointment|appointments,selection,choice,option,pick,give,giving,capacity,employment,job,jobs,interview,interviews,delegation,delegations,office,work,authority,authorities,deputation,embassy,embassies,function,warrant,agency,agencies
+appointment|appointments,gathering,affair,social,date,engagement,companion,comrade,affairs,gatherings,party,parties,companions,friends,friend,girlfriend,girlfriends,wife,husband,socials,husbands,wives,dates,rendezvous,meeting,meetings,quickie,tryst
+
+retreat|retreats,departure,going,going away,leaving,signal,signals,signalling,left,gone,retreated,retreating,evacuation,flight,ebb,withdrawal,escape,escaped,escaping,escapes,dodge,dodging,dodged,dodges,parry,recession,shriking,shrunk,shrinks
+retreat|retreats,place,places,location,locations,house,chalet,houses,chalets,reprieve,asylum,refuge,cover,den,harbor,haven,hideaway,hideaways,hideout,hole,port,preserve,safe house,sanctuary,sanctuaries,security,shelter,shelters,shunning,shunned,shuns,shun
+
+hand|hands,limb,artery,arteria,vein,manus,mitt,paw,finger,fingers,wrist,wrists,glove,gloves,wear,wore,wearing,wears,nail,nails,pore,pores,hair,hairs,veins
+hand|hands,hired hand,workman,workingman,working man,working person,help,helper,work,working,works,worked,man,woman,butler,butlers,men,women,people,servant,serve,served,serving,serves
+hand|hands,cards,card,game,games,player,players,bridge,collaborator,partner,partners,pardner,cards,game,card,spades,spade,club,clubs,diamond,diamonds,jack,queen,king,bauer,black jack,black,red,21,dealer,casino,dealers,croupier,croupiers,casinos,gamble,gambling,gambled,gambles,luck,lucky,lunckiest,deal,dealing,dealt,hand,hands,deals,odds,money,lose,lost,losing,loses,win,winning,won,wins,dice,wager,wagers,poker,bet,betting,bets,twenty one
+
+change,modify,modified,modifies,modifier,alteration,modification,adjust,adjustment,adjustments,develop,development,switch,shift,switched,switching,switches,shifted,shifts,shifting,variation,vary,correction,corrections,modulation,modulate,modulations,surrogate,surrogates,turn,turned,turns,turning,evolution,revolution,revolutions,innovation,innovative,innovator,innovators,permutation,permutations,modify,modification,modifications,modifies,modified,revise,grow up,revised,revising,tailor,suit,qualify,shape up
+change,money,currency,cent,cents,dollar,dollars,quarter,quarters,bill,bills,amount,amounts,save,saving,saved,savings,saves,give,giving,gave,receive,received,receiving,recieves,dough,dosh,cash,bucks,buck,loot,pesos,resources,riches,hard cash,legal tender,wad,wads,chips,banknote,bankroll,banknotes,wage,wages,waged,capital,check,fund,funds,bread,coin,coins,silver,treasure,treasures
+
+field|fields,location,land,locations,region,regions,area,areas,piece of land,parcel,parcels,meadow,meadows,grass,grasses,region,regions,place,places,city,cities,farm,farms,farmland,garden,gardens,green,greens,ground,terrain,terrains,grassland,moorland,patch,vineyard,cropland,ranch,rachnes,vinyards,acreage,acres,acre,plot,plots,belt,block,enclosure,enclosures,sector,state,states,sectors,turf,ward,zone,zones,wards,turfs
+field|fields,discipline,subject,subjects,disciplines,study,studies,knowledge,art,arts,paper,papers,write,writing,wrote,writes,learn,learning,learned,learns,application,course,courses,research,researcher,researchers,researching,researches,researched,cramming,crammed,cramms,cramm,thought,thoughts,reading,readings,read,reads,question,questions,questioning,scrutiny,review,reviews,analyze,analyzing,analyzes,analyzed,musing,mused
+
+circuit|circuits,device,equipment,circuit,electrical circuit,electric circuit,electrical device,coil,contact,conductor,TV,TVs,radio,radios,computer,computers,television,televisions,chip,chips,electronic,electronics,integrated,power,ac,dc,volts,voltage,voltages,amps,amperes,ampere,light,lights,heater,heaters,building,buildings,switch,switches,dead,live,switched,switching,power,watt,watts,wattage
+circuit|circuits,course,travel,traveling,travelling,tour,lap,laps,travelled,district,route,routes,area,areas,bounds,bound,orbit,orbits,cycle,cycles,compass,perimeter,perimeters,periphery,range,ranges,ranged,ranging,region,round,tract,turn,turned,turning,turns,twirl,twirls,twirled,twirling,way,winding,patrol,patrols,march,marches,path,paths,way,ways,horizon,stadium,stadiums,sport,sports,horse,horses,dog,dogs,race,races,raced,racing,verge,verges
+
+line|lines,shape,concave,straight,boundary,boundaries,edge,edges,circle,triangle,point,points,circles,triangles,square,squares,outline,tracing,traced,trace,traces,underline,underlined,underlining,algebra,math,maths,mathematics,calculation,calculations,calculus,addition,division,figures,figure,number,numbers,subtract,trigonometry,profit,loss,money
+line|lines,tube,tubing,duct,pipe,pipes,ducts,chute,chutes,conduit,conduits,straw,straws,pipette,vein,veins,slit,pipeline,pipelines,funnel,funnels,exhaust,exhausts,vent,vents
+line|lines,passage,passages,route,railway,conduit,corridor,pathway,road,route,routes,roads,track,tracks,train,trains,travel,travels,travelling,travelled,car,cars,way,ways,highway,highways,tunnel,tunnels,sewer,sewers,acqueduct,acquaduct,canal,canals,flow,flume,gully,gutter,main,watercourse
+line|lines,lineage,kin,kinship,family,families,ancestor,ancestors,antecedent,antecedents,blood,breed,breeding,bred,descent,extraction,derivation,derivations,heritage,genealogy,parentage,parent,parents,wife,mother,father,grandfather,grandmother,child,children,offspring,boy,girl,boys,girls,man,men,woman,women,person,people,pedigree,house,houses,progenitor,primogenitor,race,stock,source
+line|lines,industrial plant,work,works,system,systems,plant,belt,belts,production,automation,automate,automated,business,businesses,union,workers,worker,branch,branches,laboratory,laboratories,sweatshop,sweatshops,warehouse,warehouses,machine shop,shop,shops,salt mines,mint,workshop,workshops,cooperative,cooperatives,firm,firms,industry,industries
+
+ride|rides,travel,traveling,travelling,drive,car,cars,driver,drivers,travels,excursion,excursions,transport,transportation,truck,trucks,taxi,van,taxis,vans,bus,buses,convertible,convertibles,gas,fuel
+ride|rides,amusement park,park,green,parks,fun,roller coaster,carnival,circus,fair,gala,galas,water park
+
+state|states,country,countries,district,territory,territories,territorial dominion,dominions,administrative district,administrative division,territorial division,state,province,nation,nations,land,commonwealth,minister,ministers,law,laws,government,resident,residents,citizen,citizens,border,borders,custom,customs,culture,cultures
+state|states,federal,USA,US,United States,agency,federal agency,government agency,bureau,office,authority,FBI,CIA,Australia,Alabama,state,AL,Alaska,state,AK,Arizona,state,AZ,Arkansas,state,AR,California,state,CA,Colorado,state,CO,Connecticut,state,CT,Delaware,state,DE,District of Columbia,state,DC,Florida,state,FL,Georgia,state,GA,Hawaii,state,HI,Idaho,state,ID,Illinois,state,IL,Indiana,state,IN,Iowa,state,IA,Kansas,state,KS,Kentucky,state,KY,Louisiana,state,LA,Maine,state,ME,Maryland,state,MD,Massachusetts,state,MA,Michigan,state,MI,Minnesota,state,MN,Mississippi,state,MS,Missouri,state,MO,Montana,state,MT,Nebraska,state,NE,Nevada,state,NV,New Hampshire,state,NH,New Jersey,state,NJ,New Mexico,state,NM,New York,state,NY,North Carolina,state,NC,North Dakota,state,ND,Ohio,state,OH,Oklahoma,state,OK,Oregon,state,OR,Pennsylvania,state,PA,Rhode Island,state,RI,South Carolina,state,SC,South Dakota,state,SD,Tennessee,state,TN,Texas,state,TX,Utah,state,UT,Vermont,state,VT,Virginia,state,VA,Washington,state,WA,West Virginia,state,WV,Wisconsin,state,WI,Wyoming,state,WY
+
+fellow|fellows,person,individual,someone,somebody,mortal,soul,chap,fella,feller,lad,lads,gent,mortals,souls,twin,twins,people,man,men,boy,boys,chap,chaps,dude,dudes,child,children,junior,juniors,youth,youths,cadet,cadets,mated,mates,mate,girl,girls,woman,women
+fellow|fellows,peer,equal,match,compeer,companion,comrade,familiar,associate,associates,comrades,companions,equals,assistant,assistants,lecturer,lecturers,consort,consorts,coworker,coworkers,instructor,instructors,professor,professors,pupil,pupils,stranger,strangers,foe,foes,enemy,enemies
+
+analysis,work,thought,thinking,thought process,cerebration,mentation,write,writing,discipline,subject,subjects,disciplines,study,studies,knowledge,art,arts,paper,papers,write,writing,wrote,writes,learn,learning,learned,learns,application,course,courses,research,researcher,researchers,researching,researches,researched,cramming,crammed,cramms,cramm,thought,thoughts,reading,readings,read,reads,question,questions,questioning,scrutiny,review,reviews,musing,mused
+analysis,therapy,purge,purging,psychoanalysis,psychology,personality,mind,head,brain,feeling,feelings,feel,felt,feels,psyche,conscience,scruples,moral,morals,instinct,aptitude,internalization,internalisation,incorporation,principle,value,ideal,prototype,paradigm,epitome,image,process,unconscious,displacement,message,content,subject matter,substance,substances,feeling,sexual desire,desire,sex,sexuality,eros,concupiscence,attraction,attractions,envy,enviousness,urge,impulse,mental,libidinal,libido,growth,growing,maturation,development,ontogeny,relationship,relationships,anxiety,anxiousness,phase,phases,allay,relieve,ease
+
+window,glass,room,rooms,structure,framework,frame,framing,frames,strip,glass,sheet glass,lock,pane,lodgings,housing,lodging,accommodation,structure,structures,construction,room,rooms,accommodations,floor,level,levels,storey,story,stories,refuge,sanctuary,asylum,family,household,households,home,homes
+window,computer,computers,electronics,electronic,screen,CRT,LCD,OLED,monitor,monitors,software,program,application,applications,GUI,mouse,click,clicking,clicked,clicks,resize,resized,resizing,resizes,move,moved,moving,moves,select,selected,selects,selecting
+
+slice,piece,part,parts,asset,assets,quantity,pieces,fruit,apple,orange,apples,oranges,fruits
+slice,injury,hurt,injuries,harm,trauma,hand,hands,finger,fingers,hospital,emergency,hospitals,doctor,doctors,surgeon,surgeons
+
+look,appearance,visual,aspect,aspects,visuals,expression,expressions,look,looks,expression,expressions,face,faces,vitality,verve,smell,smelled,smells,smelling,dirty,dirt,clean,cleans,shave,shaved,shaving,shaves,hair,nail,nails,hand,hands
+look,view,views,viewing,viewed,sensory_activity,looking,looking at,eye,eyes,glance,glances,glimps,glimpses,inspect,inspection,sight,sights,peek,review,check,checks,peeked,peeks,peeking,reviewing,reviews,reviewed,study,studied
+
+touch,sense,contact,feeling,taste,blow,brush,caress,brushed,contacting,collision,collide,crash,cuddling,cuddle,embrace,embracing,embraced,embraces,cuddled,cuddles,cuddling,petting,push,pushed,pushes,pushing,rubbing,rubbed,rub,rubs,scratch,scratched,scratches,stroke,stroking,stroked,strokes,tacility,tap,tapped,taps,tapping,touching,touches,touched,thumb,finger,fingers,hand,arm,leg,body,torso,legs,thumbs,itch,itching,itched,itches
+touch,affect,affliction,shock,shocked,shocking,shocks,affected,affecting,affects,influence,influencer,influenced,influencing,manipulate,manipulator,manipulated,manipulation,change,changed,changing,modify,modified,modifies,transform,transformed,transforms,transforming,upset,upsetting,sway,swayed,swaying,sways,perturb,perturbs,perturbing,perturbed,inspire,inspired,inspiring,achievement,skill,skillfulness,accomplishment,skills,skilled,stun,stunned,stunning,stuns,disturb,disturbs,impress,induce,influence,involve
+
+deal,business,trade,businesses,negotiate,negotiations,conclusion,conclusions,sign,signed,signing,organisation,organisations,statement,contract,contracts,accord,arrangement,arrangements,accords,pact,pacts,pledge,pledges,understanding,understandings,accordance,treaty,treaties,enterprise,enterprises,racket,bargain,bargains,protocol,writ,stipulation,protocols,package deal,package deals,terms,term,plan,plans
+deal,group,grouping,division,divisions,part,parting,parted,parts,analysis,segment,segments,segmentation,vivisection,selection,selections,card,cards,game,games,deck,card deck,sector,sectors,square,squares,sphere,spheres,geometry,geometric,parcel,sector,sectors
+
+mixer,social,gathering,party,parties,gatherings,celebration,celebrations,dinner,dinners,affair,amusement,banquet,barbecue,bbq,bash,blowout,festivity,festivities,fete,fun,gala,luncheon,splurge,splurges,tea
+mixer,utensil,processor,food,drink,drinks,alcohol,liquid,equipment,juicer,blender,blenders,juicers,cement,cake,concrete,egg,egg beater,shaker,shakers,
+
+water,chemical,fluid,H2O,element,gas,compound,waste
+water,sea,river,canal,channel,ocean,waves,wave,deep,blue
+water,beverage,drink,drinkable,potable
+
+client,person,individual,someone,somebody,business,company,invoice,man,woman,lady
+client,user,machine,network,engineering,technology,computer,server,RAM,ROM,ethernet
+
+consideration,thinking,knowledge,thought,idea,ideas,thoughts,stop
+consideration,good,goodness,thoughtful,considerate,inconsiderate,thoughtless
+consideration,cost,retainer,fixed cost,price,expensive,cheap
+
+importance,worth,value,valuable,money,dollar,price,cost,gold,silver,precious,metal
+importance,person,individual,status,position,grandness,grand,minister,king,queen,royal,noble,nobility
+
+leadership,boss,lead,leading,person,guide,CEO,CIO,CTO,board,military,soldier,soldiers,commander
+leadership,group,gathering,leaders,state,states,thought,thoughts,knowledge,know,knew,knows,think,thought,plan,planning
+
+shoulder,body,piece,cavity,muscle,hand,arm,leg,torso,head,person,man,woman
+shoulder,cut of meat,beef,lamb,pork,meat,eat,drink,food,butcher,butchers
+shoulder,road,way,berm,motorway,onramp,offramp,drive,driving
+
+paper,packing,polysaccharide,packing material,packing,wadding,roofing material,roof,build,house,builder,building,wall,walls
+paper,writing,written material,report,book,theme,pen,pencil,leaf,folio
+paper,print media,photojournalism,newspaper,article,heading,header,head,section,subdivision,cartoon,sketch,journalist,nonfiction,piece
+
+film,cinema,title,movie,picture,motion picture,motion-picture show,picture show,pic,flick,play,record,shoot,take,directory,actor,actors,screen,screen play
+film,plastic,gladwrap,foil,cover,covered,food,fridge
+film,photographic film,photographic equipment,photography,camera,snap,snapshot,selfie,photograph,photo,exposure
+
+soil,spoil,ruin,rotten,rot,food,drink,beverage,clothing,dirt,pigment
+soil,land,ground,region,parcel,earth,grass,trees,tree,grasses,brid,birds,nature
+
+rhythm,beat,timing,orchestra,orchestras,conductor,musician,musicians,music,jazz,rock,blues,piano,instrument,instruments,listen,dance
+rhythm,measure,quantity,amount,point,speech,
+rhythm,birth control,family planning,period,woman,women,menstruation,menstruate,childbirth,pregnancy,pregnant,birth
+
+lady,female,adult,grownup,madam,ma'am,gentlewoman,man,gentleman,girl
+lady,aristocrat,nobility,aristocracy,noble,refined,refine,queen,king,queens,kings
+
+doctor,health professional,doc,physician,MD,charlatan,hospital,bed,beds,operation,operating,consultation,health,examine,examination,medic,medical,medical school,nurse,nurses
+doctor,scholar,intellectual,intellect,study,studied,PhD,University,teach,teacher,research,researcher,researchers,clever,brain,brainy
+
+guest,traveler,traveller,person,man,woman,friend,friends,gathering,house,home,party,parties
+guest,computer,machine,network,machine,network,engineering,technology,server,RAM,ROM,ethernet
+
+terms,state,time,period,govern,governor,president,presidents,lady,first lady,white house,president,election,elected,electorate
+terms,expenditure,outgo,outlay,price,damage,cost,business,businesses,buy,sell,bill,invoice,invocies
+
+place,location,spot,region,property,section,address,home,subdivision,area,country,state,land,parcel
+place,status,position,station,activity,situation,part,portion,document,paper,papers
+place,seat,aircraft,bus,car,flying,plane,arranged,sit,sitting,sat,sits
+
+father,male parent,parent,parents,mother,child,son,daughter
+father,reverend,clergyman,priest,church,religion,pray,prayer,praying,pater,faith,belief,God,Jehova,God almighty,Jesus
+father,founder,leader,beginner,founding father,chief,cult,cults
+
+present,nowadays,time,today,yesterday,tomorrow,future,past,time,date,dates,times
+present,gift,acquisition,toy,toys,item,items,buy,bought,christmas,birthday,sell,sold
+
+system,know-how,rules,how to,method,methods,program,programme,plan,plans,planning,regularity,regular
+system,piece,part,organization,organisation,pieces,organism,organisms,together,pieces,parts
+
+top,surface,location,upper,lower,side,upside,down,horizontal_surface,level,vessel,watercraft,cover,lid,bottle
+top,summit,point,peak,crown,crest,top,tip,mountain,hill
+top,degree,grade,level,most,ultimate,best,contestant,contestants,participant,participants
+top,clothing,wear,shirt,pants,skirt,wearing,wore,clothes,buy,shopping
+
+reason,motivation,thought,thinking,explain,explanation,motive,need,motivate,needs,motives,act,deed,information
+reason,mental health,sane,sanity,mind,brain,insane,mental
+
+reflection,thinking,statement,thought,thought process,cerebration,intellect,meditate,contemplation,contemplate,rumination,ruminate,think,muse,thoughts,musings,communication,communicate,expression
+reflection,mirror,mirror image,image,natural phenomenon,light,dark,shadow,shadows,representation,similarity,similar,reflectivity,property

@@ -1,0 +1,36 @@
+/*
+ * Copyright (c) 2017 by Peter de Vocht
+ *
+ * All rights reserved. No part of this publication may be reproduced, distributed, or
+ * transmitted in any form or by any means, including photocopying, recording, or other
+ * electronic or mechanical methods, without the prior written permission of the publisher,
+ * except in the case of brief quotations embodied in critical reviews and certain other
+ * noncommercial uses permitted by copyright law.
+ *
+ */
+
+description = 'create_td'
+
+repositories {
+    mavenCentral()
+}
+
+task createJarDependencies(type: Copy) {
+    into "build/jars"
+    from configurations.runtime
+}
+
+dependencies {
+    // logging
+    compile group: 'org.slf4j', name: 'slf4j-api', version: slf4jVersion
+    compile group: 'org.slf4j', name: 'jcl-over-slf4j', version: slf4jVersion
+    compile group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: log4jVersion
+    compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: log4jVersion
+    compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: log4jVersion
+
+    // apache open-nlp
+    compile group: 'org.apache.opennlp', name: 'opennlp-tools', version: openNLPVersion
+    compile group: 'org.apache.opennlp', name: 'opennlp-uima', version: openNLPVersion
+}
+
+

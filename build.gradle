@@ -1,0 +1,48 @@
+/*
+ * Copyright (c) 2017 by Peter de Vocht
+ *
+ * All rights reserved. No part of this publication may be reproduced, distributed, or
+ * transmitted in any form or by any means, including photocopying, recording, or other
+ * electronic or mechanical methods, without the prior written permission of the publisher,
+ * except in the case of brief quotations embodied in critical reviews and certain other
+ * noncommercial uses permitted by copyright law.
+ *
+ */
+
+apply from: 'version.gradle'
+
+apply plugin: 'java'
+apply plugin: 'idea'
+
+allprojects {
+    group = 'industries.vocht.wsd'
+    version = '1.0'
+}
+
+// 'gradle allDeps' will now give you a list of all transitive dependencies
+subprojects {
+    task allDeps(type: DependencyReportTask) {}
+}
+
+idea {
+    project {
+        //if you want to set specific jdk and language level
+        jdkName = javaVersion
+        languageLevel = javaVersion
+
+        //you can configure the VCS used by the project
+        vcs = 'Git'
+    }
+}
+
+
+subprojects {
+    apply plugin: 'java'
+    sourceCompatibility = javaVersion
+    targetCompatibility = javaVersion
+
+    repositories {
+        mavenLocal()
+        maven { url "http://repo.maven.apache.org/maven2" }
+    }
+}

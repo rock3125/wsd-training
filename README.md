@@ -8,3 +8,9 @@ WordNet does not provide a clear enough set of semantic nouns, so I've created m
 # parser
 
 This uses the Apache OpenNLP parser for sentence boundary detection, and Part of Speech (POS) tagging using Penn tags.
+
+# python Keras DNN
+
+The processed data is then used to train an LSTM using Keras/Tensorflow that can be loaded to get a neural network that will label the correct Synset ID (according to the lexicon) and assing a Synset ID to an ambiguous noun.
+
+With the right lexicon / training data this seems to get around a 75% accuracy level.

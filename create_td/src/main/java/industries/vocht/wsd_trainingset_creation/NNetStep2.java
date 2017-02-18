@@ -230,11 +230,9 @@ public class NNetStep2 {
                         String[] parts = line.split(",");
                         for (String part : parts) {
                             String key = part.toLowerCase().trim();
-                            if ( key.compareToIgnoreCase(word) != 0 && ( wordPlural == null || wordPlural.compareToIgnoreCase(key) != 0 ) ) {
-                                for ( int i = 0; i < set.size(); i++ ) {
-                                    if (set.get(i).contains(key) ) {
-                                        counts[i] = counts[i] + 1;
-                                    }
+                            for ( int i = 0; i < set.size(); i++ ) {
+                                if (set.get(i).contains(key) ) {
+                                    counts[i] = counts[i] + 1;
                                 }
                             }
                         } // for each part of the csv
@@ -245,13 +243,11 @@ public class NNetStep2 {
                         int counter = 0;
                         for (String part : parts) {
                             String key = part.toLowerCase().trim();
-                            if (key.compareToIgnoreCase(word) != 0 && (wordPlural == null || wordPlural.compareToIgnoreCase(key) != 0)) {
-                                if ( counter > 0 ) {
-                                    sb.append(",");
-                                }
-                                sb.append(key);
-                                counter = counter + 1;
+                            if ( counter > 0 ) {
+                                sb.append(",");
                             }
+                            sb.append(key);
+                            counter = counter + 1;
                         }
                         sb.append("\n");
                         if ( index >= 0 ) {

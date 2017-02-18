@@ -99,7 +99,7 @@ public class NNetStep1 {
 
         int lineCounter = 0;
 
-        int minValidSize = (windowSize + windowSize / 2);
+        int minValidSize = (windowSize / 2); // min number of items needed for a valid training set
 
         // for each file that ends in .txt
         File folder = new File(trainingSetFileDirectory);
@@ -188,7 +188,7 @@ public class NNetStep1 {
                                             }
                                         }
                                         // a valid piece of text to collect?
-                                        if (count >= windowSize && (maxFileSizeInBytes <= 0 || fileSize < maxFileSizeInBytes)) {
+                                        if (count >= minValidSize && (maxFileSizeInBytes <= 0 || fileSize < maxFileSizeInBytes)) {
                                             sb.append("\n");
                                             writer.write(sb.toString());
                                             fileSize = fileSize + sb.length();

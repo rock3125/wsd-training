@@ -47,7 +47,7 @@ def nnetDataGenerator(filename, word2int, num_classes, batch_size = 4096, max_se
                     Y = []
 
 class Trainer:
-    """train a neural network for the booktrack system"""
+    """train a neural network"""
 
     # do the training itself, y is a set of one-hot vectors
     # num_outputs = number of classes

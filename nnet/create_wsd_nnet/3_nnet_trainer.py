@@ -99,7 +99,10 @@ class Trainer:
 # test the nnet training
 #
 
+# the training file is just a random arrangement of "combined-ts.txt"
+# e.g   sort --random-sort combined-ts.tx > combined-ts-rnd.txt
 training_file = 'combined-ts-rnd.txt'
+
 label_file = 'combined-ts.labels.txt'
 vocab_file = 'combined-ts.vocab.txt'
 model_save_filename = 'combined-nnet.bin'

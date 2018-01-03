@@ -100,7 +100,7 @@ class Trainer:
 #
 
 # the training file is just a random arrangement of "combined-ts.txt"
-# e.g   sort --random-sort combined-ts.tx > combined-ts-rnd.txt
+# e.g   sort --random-sort combined-ts.txt > combined-ts-rnd.txt
 training_file = 'combined-ts-rnd.txt'
 
 label_file = 'combined-ts.labels.txt'

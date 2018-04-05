@@ -112,7 +112,7 @@ public class NLPParser {
                 try {
                     logger.debug("NLPParser: sentence detected = en-sent.bin");
                     // Loading sentence detection model
-                    modelIn = new FileInputStream(dataDirectory + "/opennlp/en-sent.bin");
+                    modelIn = new FileInputStream(dataDirectory + "/opennlp/models-1.5/en-sent.bin");
                     final SentenceModel sentenceModel = new SentenceModel(modelIn);
                     modelIn.close();
 
@@ -131,7 +131,7 @@ public class NLPParser {
             try {
                 logger.debug("NLPParser: pos-tagger = en-pos-maxent.bin");
                 // Loading tokenizer model
-                modelIn = new FileInputStream(dataDirectory + "/opennlp/en-pos-maxent.bin");
+                modelIn = new FileInputStream(dataDirectory + "/opennlp/models-1.5/en-pos-maxent.bin");
                 final POSModel posModel = new POSModel(modelIn);
                 modelIn.close();
 

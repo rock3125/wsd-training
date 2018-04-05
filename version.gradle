@@ -12,10 +12,10 @@
 
 ext{
     // software package versions
-    slf4jVersion = '1.7.10'
-    log4jVersion = '2.2';
+    slf4jVersion = '1.7.25'
+    log4jVersion = '2.11.0';
 
-    openNLPVersion = '1.6.0'
+    openNLPVersion = '1.8.4'
 
     javaVersion = '1.8'
 }

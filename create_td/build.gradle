@@ -34,3 +34,22 @@ dependencies {
 }
 
 
+// setup simsage cmd line system for test deployments
+task setup(type: Copy) {
+    dependsOn build
+
+    delete "../dist"
+
+    into '../dist/lib'
+    from configurations.runtime
+    from jar
+
+    from(new File(project.rootDir.toString() + '/create_td/scripts/train.sh')) {
+        into '..'
+    }
+
+    from(new File(project.rootDir.toString() + '/data')) {
+        into '../data'
+    }
+}
+

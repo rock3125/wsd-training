@@ -7,7 +7,7 @@
 //     these nouns are roughly ranked by frequency and each line of
 //     a word is a different sense of that word.
 //
-// started by: Peter de Vocht 19 February 2017
+// started by: Rock de Vocht 19 February 2017
 //
 /////////////////////////////////////////////////////////
 
@@ -201,96 +201,96 @@ state|states,federal,USA,US,United States,agency,federal agency,government agenc
 fellow|fellows,person,individual,someone,somebody,mortal,soul,chap,fella,feller,lad,lads,gent,mortals,souls,twin,twins,people,man,men,boy,boys,chap,chaps,dude,dudes,child,children,junior,juniors,youth,youths,cadet,cadets,mated,mates,mate,girl,girls,woman,women
 fellow|fellows,peer,equal,match,compeer,companion,comrade,familiar,associate,associates,comrades,companions,equals,assistant,assistants,lecturer,lecturers,consort,consorts,coworker,coworkers,instructor,instructors,professor,professors,pupil,pupils,stranger,strangers,foe,foes,enemy,enemies
 
-analysis,work,thought,thinking,thought process,cerebration,mentation,write,writing,discipline,subject,subjects,disciplines,study,studies,knowledge,art,arts,paper,papers,write,writing,wrote,writes,learn,learning,learned,learns,application,course,courses,research,researcher,researchers,researching,researches,researched,cramming,crammed,cramms,cramm,thought,thoughts,reading,readings,read,reads,question,questions,questioning,scrutiny,review,reviews,musing,mused
-analysis,therapy,purge,purging,psychoanalysis,psychology,personality,mind,head,brain,feeling,feelings,feel,felt,feels,psyche,conscience,scruples,moral,morals,instinct,aptitude,internalization,internalisation,incorporation,principle,value,ideal,prototype,paradigm,epitome,image,process,unconscious,displacement,message,content,subject matter,substance,substances,feeling,sexual desire,desire,sex,sexuality,eros,concupiscence,attraction,attractions,envy,enviousness,urge,impulse,mental,libidinal,libido,growth,growing,maturation,development,ontogeny,relationship,relationships,anxiety,anxiousness,phase,phases,allay,relieve,ease
+analysis|work,thought,thinking,thought process,cerebration,mentation,write,writing,discipline,subject,subjects,disciplines,study,studies,knowledge,art,arts,paper,papers,write,writing,wrote,writes,learn,learning,learned,learns,application,course,courses,research,researcher,researchers,researching,researches,researched,cramming,crammed,cramms,cramm,thought,thoughts,reading,readings,read,reads,question,questions,questioning,scrutiny,review,reviews,musing,mused
+analysis|therapy,purge,purging,psychoanalysis,psychology,personality,mind,head,brain,feeling,feelings,feel,felt,feels,psyche,conscience,scruples,moral,morals,instinct,aptitude,internalization,internalisation,incorporation,principle,value,ideal,prototype,paradigm,epitome,image,process,unconscious,displacement,message,content,subject matter,substance,substances,feeling,sexual desire,desire,sex,sexuality,eros,concupiscence,attraction,attractions,envy,enviousness,urge,impulse,mental,libidinal,libido,growth,growing,maturation,development,ontogeny,relationship,relationships,anxiety,anxiousness,phase,phases,allay,relieve,ease
 
-window,glass,room,rooms,structure,framework,frame,framing,frames,strip,glass,sheet glass,lock,pane,lodgings,housing,lodging,accommodation,structure,structures,construction,room,rooms,accommodations,floor,level,levels,storey,story,stories,refuge,sanctuary,asylum,family,household,households,home,homes
-window,computer,computers,electronics,electronic,screen,CRT,LCD,OLED,monitor,monitors,software,program,application,applications,GUI,mouse,click,clicking,clicked,clicks,resize,resized,resizing,resizes,move,moved,moving,moves,select,selected,selects,selecting
+window|glass,room,rooms,structure,framework,frame,framing,frames,strip,glass,sheet glass,lock,pane,lodgings,housing,lodging,accommodation,structure,structures,construction,room,rooms,accommodations,floor,level,levels,storey,story,stories,refuge,sanctuary,asylum,family,household,households,home,homes
+window|computer,computers,electronics,electronic,screen,CRT,LCD,OLED,monitor,monitors,software,program,application,applications,GUI,mouse,click,clicking,clicked,clicks,resize,resized,resizing,resizes,move,moved,moving,moves,select,selected,selects,selecting
 
-slice,piece,part,parts,asset,assets,quantity,pieces,fruit,apple,orange,apples,oranges,fruits
-slice,injury,hurt,injuries,harm,trauma,hand,hands,finger,fingers,hospital,emergency,hospitals,doctor,doctors,surgeon,surgeons
+slice|piece,part,parts,asset,assets,quantity,pieces,fruit,apple,orange,apples,oranges,fruits
+slice|injury,hurt,injuries,harm,trauma,hand,hands,finger,fingers,hospital,emergency,hospitals,doctor,doctors,surgeon,surgeons
 
-look,appearance,visual,aspect,aspects,visuals,expression,expressions,look,looks,expression,expressions,face,faces,vitality,verve,smell,smelled,smells,smelling,dirty,dirt,clean,cleans,shave,shaved,shaving,shaves,hair,nail,nails,hand,hands
-look,view,views,viewing,viewed,sensory_activity,looking,looking at,eye,eyes,glance,glances,glimps,glimpses,inspect,inspection,sight,sights,peek,review,check,checks,peeked,peeks,peeking,reviewing,reviews,reviewed,study,studied
+look|appearance,visual,aspect,aspects,visuals,expression,expressions,look,looks,expression,expressions,face,faces,vitality,verve,smell,smelled,smells,smelling,dirty,dirt,clean,cleans,shave,shaved,shaving,shaves,hair,nail,nails,hand,hands
+look|view,views,viewing,viewed,sensory_activity,looking,looking at,eye,eyes,glance,glances,glimps,glimpses,inspect,inspection,sight,sights,peek,review,check,checks,peeked,peeks,peeking,reviewing,reviews,reviewed,study,studied
 
-touch,sense,contact,feeling,taste,blow,brush,caress,brushed,contacting,collision,collide,crash,cuddling,cuddle,embrace,embracing,embraced,embraces,cuddled,cuddles,cuddling,petting,push,pushed,pushes,pushing,rubbing,rubbed,rub,rubs,scratch,scratched,scratches,stroke,stroking,stroked,strokes,tacility,tap,tapped,taps,tapping,touching,touches,touched,thumb,finger,fingers,hand,arm,leg,body,torso,legs,thumbs,itch,itching,itched,itches
-touch,affect,affliction,shock,shocked,shocking,shocks,affected,affecting,affects,influence,influencer,influenced,influencing,manipulate,manipulator,manipulated,manipulation,change,changed,changing,modify,modified,modifies,transform,transformed,transforms,transforming,upset,upsetting,sway,swayed,swaying,sways,perturb,perturbs,perturbing,perturbed,inspire,inspired,inspiring,achievement,skill,skillfulness,accomplishment,skills,skilled,stun,stunned,stunning,stuns,disturb,disturbs,impress,induce,influence,involve
+touch|sense,contact,feeling,taste,blow,brush,caress,brushed,contacting,collision,collide,crash,cuddling,cuddle,embrace,embracing,embraced,embraces,cuddled,cuddles,cuddling,petting,push,pushed,pushes,pushing,rubbing,rubbed,rub,rubs,scratch,scratched,scratches,stroke,stroking,stroked,strokes,tacility,tap,tapped,taps,tapping,touching,touches,touched,thumb,finger,fingers,hand,arm,leg,body,torso,legs,thumbs,itch,itching,itched,itches
+touch|affect,affliction,shock,shocked,shocking,shocks,affected,affecting,affects,influence,influencer,influenced,influencing,manipulate,manipulator,manipulated,manipulation,change,changed,changing,modify,modified,modifies,transform,transformed,transforms,transforming,upset,upsetting,sway,swayed,swaying,sways,perturb,perturbs,perturbing,perturbed,inspire,inspired,inspiring,achievement,skill,skillfulness,accomplishment,skills,skilled,stun,stunned,stunning,stuns,disturb,disturbs,impress,induce,influence,involve
 
-deal,business,trade,businesses,negotiate,negotiations,conclusion,conclusions,sign,signed,signing,organisation,organisations,statement,contract,contracts,accord,arrangement,arrangements,accords,pact,pacts,pledge,pledges,understanding,understandings,accordance,treaty,treaties,enterprise,enterprises,racket,bargain,bargains,protocol,writ,stipulation,protocols,package deal,package deals,terms,term,plan,plans
-deal,group,grouping,division,divisions,part,parting,parted,parts,analysis,segment,segments,segmentation,vivisection,selection,selections,card,cards,game,games,deck,card deck,sector,sectors,square,squares,sphere,spheres,geometry,geometric,parcel,sector,sectors
+deal|business,trade,businesses,negotiate,negotiations,conclusion,conclusions,sign,signed,signing,organisation,organisations,statement,contract,contracts,accord,arrangement,arrangements,accords,pact,pacts,pledge,pledges,understanding,understandings,accordance,treaty,treaties,enterprise,enterprises,racket,bargain,bargains,protocol,writ,stipulation,protocols,package deal,package deals,terms,term,plan,plans
+deal|group,grouping,division,divisions,part,parting,parted,parts,analysis,segment,segments,segmentation,vivisection,selection,selections,card,cards,game,games,deck,card deck,sector,sectors,square,squares,sphere,spheres,geometry,geometric,parcel,sector,sectors
 
-mixer,social,gathering,party,parties,gatherings,celebration,celebrations,dinner,dinners,affair,amusement,banquet,barbecue,bbq,bash,blowout,festivity,festivities,fete,fun,gala,luncheon,splurge,splurges,tea
-mixer,utensil,processor,food,drink,drinks,alcohol,liquid,equipment,juicer,blender,blenders,juicers,cement,cake,concrete,egg,egg beater,shaker,shakers,
+mixer|social,gathering,party,parties,gatherings,celebration,celebrations,dinner,dinners,affair,amusement,banquet,barbecue,bbq,bash,blowout,festivity,festivities,fete,fun,gala,luncheon,splurge,splurges,tea
+mixer|utensil,processor,food,drink,drinks,alcohol,liquid,equipment,juicer,blender,blenders,juicers,cement,cake,concrete,egg,egg beater,shaker,shakers,
 
-water,chemical,fluid,H2O,element,gas,compound,waste
-water,sea,river,canal,channel,ocean,waves,wave,deep,blue
-water,beverage,drink,drinkable,potable
+water|chemical,fluid,H2O,element,gas,compound,waste
+water|sea,river,canal,channel,ocean,waves,wave,deep,blue
+water|beverage,drink,drinkable,potable,drank,some
 
-client,person,individual,someone,somebody,business,company,invoice,man,woman,lady
-client,user,machine,network,engineering,technology,computer,server,RAM,ROM,ethernet
+client|person,individual,someone,somebody,business,company,invoice,man,woman,lady
+client|user,machine,network,engineering,technology,computer,server,RAM,ROM,ethernet
 
-consideration,thinking,knowledge,thought,idea,ideas,thoughts,stop
-consideration,good,goodness,thoughtful,considerate,inconsiderate,thoughtless
-consideration,cost,retainer,fixed cost,price,expensive,cheap
+consideration|thinking,knowledge,thought,idea,ideas,thoughts,stop
+consideration|good,goodness,thoughtful,considerate,inconsiderate,thoughtless
+consideration|cost,retainer,fixed cost,price,expensive,cheap
 
-importance,worth,value,valuable,money,dollar,price,cost,gold,silver,precious,metal
-importance,person,individual,status,position,grandness,grand,minister,king,queen,royal,noble,nobility
+importance|worth,value,valuable,money,dollar,price,cost,gold,silver,precious,metal
+importance|person,individual,status,position,grandness,grand,minister,king,queen,royal,noble,nobility
 
-leadership,boss,lead,leading,person,guide,CEO,CIO,CTO,board,military,soldier,soldiers,commander
-leadership,group,gathering,leaders,state,states,thought,thoughts,knowledge,know,knew,knows,think,thought,plan,planning
+leadership|boss,lead,leading,person,guide,CEO,CIO,CTO,board,military,soldier,soldiers,commander
+leadership|group,gathering,leaders,state,states,thought,thoughts,knowledge,know,knew,knows,think,thought,plan,planning
 
-shoulder,body,piece,cavity,muscle,hand,arm,leg,torso,head,person,man,woman
-shoulder,cut of meat,beef,lamb,pork,meat,eat,drink,food,butcher,butchers
-shoulder,road,way,berm,motorway,onramp,offramp,drive,driving
+shoulder|body,piece,cavity,muscle,hand,arm,leg,torso,head,person,man,woman
+shoulder|cut of meat,beef,lamb,pork,meat,eat,drink,food,butcher,butchers
+shoulder|road,way,berm,motorway,onramp,offramp,drive,driving
 
-paper,packing,polysaccharide,packing material,packing,wadding,roofing material,roof,build,house,builder,building,wall,walls
-paper,writing,written material,report,book,theme,pen,pencil,leaf,folio
-paper,print media,photojournalism,newspaper,article,heading,header,head,section,subdivision,cartoon,sketch,journalist,nonfiction,piece
+paper|packing,polysaccharide,packing material,packing,wadding,roofing material,roof,build,house,builder,building,wall,walls
+paper|writing,written material,report,book,theme,pen,pencil,leaf,folio
+paper|print media,photojournalism,newspaper,article,heading,header,head,section,subdivision,cartoon,sketch,journalist,nonfiction,piece
 
-film,cinema,title,movie,picture,motion picture,motion-picture show,picture show,pic,flick,play,record,shoot,take,directory,actor,actors,screen,screen play
-film,plastic,gladwrap,foil,cover,covered,food,fridge
-film,photographic film,photographic equipment,photography,camera,snap,snapshot,selfie,photograph,photo,exposure
+film|cinema,title,movie,picture,motion picture,motion-picture show,picture show,pic,flick,play,record,shoot,take,directory,actor,actors,screen,screen play
+film|plastic,gladwrap,foil,cover,covered,food,fridge
+film|photographic film,photographic equipment,photography,camera,snap,snapshot,selfie,photograph,photo,exposure
 
-soil,spoil,ruin,rotten,rot,food,drink,beverage,clothing,dirt,pigment
-soil,land,ground,region,parcel,earth,grass,trees,tree,grasses,brid,birds,nature
+soil|spoil,ruin,rotten,rot,food,drink,beverage,clothing,dirt,pigment
+soil|land,ground,region,parcel,earth,grass,trees,tree,grasses,brid,birds,nature
 
-rhythm,beat,timing,orchestra,orchestras,conductor,musician,musicians,music,jazz,rock,blues,piano,instrument,instruments,listen,dance
-rhythm,measure,quantity,amount,point,speech,
-rhythm,birth control,family planning,period,woman,women,menstruation,menstruate,childbirth,pregnancy,pregnant,birth
+rhythm|beat,timing,orchestra,orchestras,conductor,musician,musicians,music,jazz,rock,blues,piano,instrument,instruments,listen,dance
+rhythm|measure,quantity,amount,point,speech,
+rhythm|birth control,family planning,period,woman,women,menstruation,menstruate,childbirth,pregnancy,pregnant,birth
 
-lady,female,adult,grownup,madam,ma'am,gentlewoman,man,gentleman,girl
-lady,aristocrat,nobility,aristocracy,noble,refined,refine,queen,king,queens,kings
+lady|female,adult,grownup,madam,ma'am,gentlewoman,man,gentleman,girl
+lady|aristocrat,nobility,aristocracy,noble,refined,refine,queen,king,queens,kings
 
-doctor,health professional,doc,physician,MD,charlatan,hospital,bed,beds,operation,operating,consultation,health,examine,examination,medic,medical,medical school,nurse,nurses
-doctor,scholar,intellectual,intellect,study,studied,PhD,University,teach,teacher,research,researcher,researchers,clever,brain,brainy
+doctor|health professional,doc,physician,MD,charlatan,hospital,bed,beds,operation,operating,consultation,health,examine,examination,medic,medical,medical school,nurse,nurses
+doctor|scholar,intellectual,intellect,study,studied,PhD,University,teach,teacher,research,researcher,researchers,clever,brain,brainy
 
-guest,traveler,traveller,person,man,woman,friend,friends,gathering,house,home,party,parties
-guest,computer,machine,network,machine,network,engineering,technology,server,RAM,ROM,ethernet
+guest|traveler,traveller,person,man,woman,friend,friends,gathering,house,home,party,parties
+guest|computer,machine,network,machine,network,engineering,technology,server,RAM,ROM,ethernet
 
-terms,state,time,period,govern,governor,president,presidents,lady,first lady,white house,president,election,elected,electorate
-terms,expenditure,outgo,outlay,price,damage,cost,business,businesses,buy,sell,bill,invoice,invocies
+terms|state,time,period,govern,governor,president,presidents,lady,first lady,white house,president,election,elected,electorate
+terms|expenditure,outgo,outlay,price,damage,cost,business,businesses,buy,sell,bill,invoice,invocies
 
-place,location,spot,region,property,section,address,home,subdivision,area,country,state,land,parcel
-place,status,position,station,activity,situation,part,portion,document,paper,papers
-place,seat,aircraft,bus,car,flying,plane,arranged,sit,sitting,sat,sits
+place|location,spot,region,property,section,address,home,subdivision,area,country,state,land,parcel
+place|status,position,station,activity,situation,part,portion,document,paper,papers
+place|seat,aircraft,bus,car,flying,plane,arranged,sit,sitting,sat,sits
 
-father,male parent,parent,parents,mother,child,son,daughter
-father,reverend,clergyman,priest,church,religion,pray,prayer,praying,pater,faith,belief,God,Jehova,God almighty,Jesus
-father,founder,leader,beginner,founding father,chief,cult,cults
+father|male parent,parent,parents,mother,child,son,daughter
+father|reverend,clergyman,priest,church,religion,pray,prayer,praying,pater,faith,belief,God,Jehova,God almighty,Jesus
+father|founder,leader,beginner,founding father,chief,cult,cults
 
-present,nowadays,time,today,yesterday,tomorrow,future,past,time,date,dates,times
-present,gift,acquisition,toy,toys,item,items,buy,bought,christmas,birthday,sell,sold
+present|nowadays,time,today,yesterday,tomorrow,future,past,time,date,dates,times
+present|gift,acquisition,toy,toys,item,items,buy,bought,christmas,birthday,sell,sold
 
-system,know-how,rules,how to,method,methods,program,programme,plan,plans,planning,regularity,regular
-system,piece,part,organization,organisation,pieces,organism,organisms,together,pieces,parts
+system|know-how,rules,how to,method,methods,program,programme,plan,plans,planning,regularity,regular
+system|piece,part,organization,organisation,pieces,organism,organisms,together,pieces,parts
 
-top,surface,location,upper,lower,side,upside,down,horizontal_surface,level,vessel,watercraft,cover,lid,bottle
-top,summit,point,peak,crown,crest,top,tip,mountain,hill
-top,degree,grade,level,most,ultimate,best,contestant,contestants,participant,participants
-top,clothing,wear,shirt,pants,skirt,wearing,wore,clothes,buy,shopping
+top|surface,location,upper,lower,side,upside,down,horizontal_surface,level,vessel,watercraft,cover,lid,bottle
+top|summit,point,peak,crown,crest,top,tip,mountain,hill
+top|degree,grade,level,most,ultimate,best,contestant,contestants,participant,participants
+top|clothing,wear,shirt,pants,skirt,wearing,wore,clothes,buy,shopping
 
-reason,motivation,thought,thinking,explain,explanation,motive,need,motivate,needs,motives,act,deed,information
-reason,mental health,sane,sanity,mind,brain,insane,mental
+reason|motivation,thought,thinking,explain,explanation,motive,need,motivate,needs,motives,act,deed,information
+reason|mental health,sane,sanity,mind,brain,insane,mental
 
-reflection,thinking,statement,thought,thought process,cerebration,intellect,meditate,contemplation,contemplate,rumination,ruminate,think,muse,thoughts,musings,communication,communicate,expression
-reflection,mirror,mirror image,image,natural phenomenon,light,dark,shadow,shadows,representation,similarity,similar,reflectivity,property
+reflection|thinking,statement,thought,thought process,cerebration,intellect,meditate,contemplation,contemplate,rumination,ruminate,think,muse,thoughts,musings,communication,communicate,expression
+reflection|mirror,mirror image,image,natural phenomenon,light,dark,shadow,shadows,representation,similarity,similar,reflectivity,property

@@ -106,6 +106,8 @@ public class NNetStep1 {
         if (listOfFiles != null) {
             for (File file : listOfFiles) {
 
+                System.out.println("found file:" + file.getAbsolutePath());
+
                 // deal with text files
                 if (file.getAbsolutePath().endsWith(".txt")) {
 

@@ -48,6 +48,10 @@ task setup(type: Copy) {
         into '..'
     }
 
+    from(new File(project.rootDir.toString() + '/wsd.properties')) {
+        into '..'
+    }
+
     from(new File(project.rootDir.toString() + '/data')) {
         into '../data'
     }

@@ -56,17 +56,23 @@ public class Main {
 
         new File(outputDirectoryBase).mkdirs(); // create dir if dne
 
+        System.out.println("parameters from wsd.properties");
+
         // surrounding words window size
         int windowSize = Integer.parseInt(settings.getValueByKey("windowSize"));
+        System.out.println("windowSize=" + windowSize);
 
         // number of items to return for top frequency matches (i.e. top x relations to the noun)
         int collectorCount = Integer.parseInt(settings.getValueByKey("collectorCount"));
+        System.out.println("collectorCount=" + collectorCount);
 
         // limit unlabelled files if > 0 to this many bytes
         long maxFileSizeInBytes = Long.parseLong(settings.getValueByKey("maxFileSizeInBytes"));
+        System.out.println("maxFileSizeInBytes=" + maxFileSizeInBytes);
 
         // percentage at which labelled sets get split into good and bad to see how well the semantic cloud works for each noun
         double failThreshold = Double.parseDouble(settings.getValueByKey("failThreshold"));
+        System.out.println("failThreshold=" + failThreshold);
 
         // step 1.  turn unlabelled data into labelled sets
         // parse the text files, look for nouns that are in the lexicon (see data/lexicon)

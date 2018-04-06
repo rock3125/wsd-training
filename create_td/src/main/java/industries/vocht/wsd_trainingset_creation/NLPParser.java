@@ -66,6 +66,31 @@ public class NLPParser {
     }
 
     /**
+     * process a pre-parsed .parser file
+     *
+     * @param text the text to process
+     * @return a list of sentences
+     */
+    public List<Sentence> parsePeterParsedText(String text) throws Exception {
+        List<Sentence> resultList = new ArrayList<>();
+        if ( text != null && text.length() > 0 ) {
+
+            String[] parts = text.split(" ");
+            List<Token> tokenList = new ArrayList<>();
+            for (String part : parts) {
+                String[] wordParts = part.split(":");
+                if (wordParts.length == 2) {
+                    tokenList.add(new Token(wordParts[0], wordParts[1]));
+                }
+            }
+            if (tokenList.size() > 0) {
+                resultList.add(new Sentence(tokenList));
+            }
+        }
+        return resultList;
+    }
+
+    /**
      * open nlp sentence boundary detection
      * @param text the text to perform detection on
      * @return a list of sentence strings
@@ -96,7 +121,7 @@ public class NLPParser {
             String[] tags = getTags(words);
             if (tags != null && tags.length == tokenList.size()) {
                 for (int i = 0; i < tokenList.size(); i++ ) {
-                    tokenList.get(i).setPennType(PennType.fromString(tags[i]));
+                    tokenList.get(i).setTag(tags[i]);
                 }
             } else {
                 throw new Exception("invalid return from open-nlp tagger");

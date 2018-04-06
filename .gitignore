@@ -24,3 +24,5 @@ hs_err_pid*
 **/*.versionsBackup
 build
 dist
+data/unlabelled
+data/labelled

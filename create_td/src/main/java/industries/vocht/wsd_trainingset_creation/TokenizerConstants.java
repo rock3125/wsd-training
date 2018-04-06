@@ -24,19 +24,6 @@ import java.util.List;
  */
 public class TokenizerConstants {
 
-    public enum Type {
-        Space,
-        Number,
-        Text,
-        Special,
-        SQuote,
-        DQuote,
-        Hyphen,
-        Punctuation,
-        FullStop,
-        Possessive
-    }
-
     // return true if ch is a number 0..9
     public static boolean isNumeric( char ch ) {
         return ch >= '0' && ch <= '9';

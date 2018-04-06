@@ -24,9 +24,9 @@ import java.util.zip.GZIPInputStream;
  *
  *
  */
-public class NNetStep1 {
+public class GenerateUnlabelled {
 
-    public NNetStep1() {
+    public GenerateUnlabelled() {
     }
 
     /**
@@ -132,11 +132,28 @@ public class NNetStep1 {
                                                   undesirables, maxFileSizeInBytes, lineCounter, map, focus);
 
                     }
+
+                // deal with Peter's pre-parsed files (format word1:tag word2:tag ... \n)
+                } else if (file.getAbsolutePath().endsWith(".parsed")) {
+
+                    String filename = file.getAbsolutePath();
+                    System.out.println("parsing and analysing " + filename);
+                    BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(filename)));
+                    String content;
+                    while ((content = br.readLine()) != null) {
+
+                        List<Sentence> sentenceList = parser.parsePeterParsedText(content);
+                        lineCounter = parseSingle(parser, filename, sentenceList, windowSize,
+                                openFileSet, openFileSize, nnetUnlabelledDirectory,
+                                undesirables, maxFileSizeInBytes, lineCounter, map, focus);
+
+                    }
                 }
 
 
-            }
-        }
+            } // for each file found
+
+        } // if list of files != null
 
         // close all open files
         for ( PrintWriter writer : openFileSet.values() ) {
@@ -163,6 +180,45 @@ public class NNetStep1 {
      * @return the updated lineCounter
      */
     private int parseSingle(NLPParser parser, String filename, String textFileContent,
+                            int windowSize, Map<String, PrintWriter> openFileSet, Map<String, Long> openFileSize,
+                            String nnetUnlabelledDirectory, Undesirables undesirables,
+                            long maxFileSizeInBytes, int lineCounter,
+                            Map<String, WordnetAmbiguousSet> map, Set<String> focus) {
+        try {
+            List<Sentence> sentenceList = parser.parse(textFileContent);
+            if (sentenceList == null) {
+                System.out.println("empty: " + filename);
+                return lineCounter;
+            }
+
+            return parseSingle(parser, filename, sentenceList, windowSize, openFileSet, openFileSize,
+                               nnetUnlabelledDirectory, undesirables, maxFileSizeInBytes, lineCounter, map, focus);
+
+        } catch(Exception ex){
+            System.out.println("error parsing file:" + ex.toString());
+        }
+        return lineCounter;
+    }
+
+
+    /**
+     * parse a single block of text and process it according to our needs for ambiguous entities
+     *
+     * @param parser the text parser to use
+     * @param filename the name of the file for info purposes
+     * @param sentenceList the parsed document contents
+     * @param windowSize the window size around text for finding match words
+     * @param openFileSet the set of files open for writing data to for training
+     * @param openFileSize the size of the files open for writing as a cutoff
+     * @param nnetUnlabelledDirectory the directory to create files in for training
+     * @param undesirables undesirables detection class
+     * @param maxFileSizeInBytes max file size for collecting data
+     * @param lineCounter a counter for tracking where we are (updated)
+     * @param map storage for the ambiguous entities to look for
+     * @param focus an exclusion set
+     * @return the updated lineCounter
+     */
+    private int parseSingle(NLPParser parser, String filename, List<Sentence> sentenceList,
                              int windowSize, Map<String, PrintWriter> openFileSet, Map<String, Long> openFileSize,
                              String nnetUnlabelledDirectory, Undesirables undesirables,
                              long maxFileSizeInBytes, int lineCounter,
@@ -171,8 +227,7 @@ public class NNetStep1 {
         int minValidSize = (windowSize / 2); // min number of items needed for a valid training set
 
         try {
-            List<Sentence> sentenceList = parser.parse(textFileContent);
-            if (sentenceList == null) {
+            if (sentenceList == null || sentenceList.size() == 0) {
                 System.out.println("empty: " + filename);
                 return lineCounter;
             }
@@ -190,8 +245,8 @@ public class NNetStep1 {
                     // is this token / word one of the ambiguous words from Peter's lexicon?
                     Token token = tokenList.get(i);
                     String part = token.getText();
-                    String pennType = token.getPennType().toString();
-                    if (focus.contains(part.toLowerCase()) && pennType.startsWith("NN")) {
+                    String tag = token.getTag();
+                    if (focus.contains(part.toLowerCase()) && tag.startsWith("NN")) {
                         // get the set
                         WordnetAmbiguousSet set = map.get(part.toLowerCase());
 

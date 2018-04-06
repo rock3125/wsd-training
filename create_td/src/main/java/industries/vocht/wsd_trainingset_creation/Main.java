@@ -77,10 +77,10 @@ public class Main {
         // step 1.  turn unlabelled data into labelled sets
         // parse the text files, look for nouns that are in the lexicon (see data/lexicon)
         // and start collecting related data
-        NNetStep1 step1 = new NNetStep1();
+        GenerateUnlabelled step1 = new GenerateUnlabelled();
         step1.create(dataPath, trainingSetFileFolder, outputDirectoryBase, maxFileSizeInBytes, windowSize);
 
-        NNetStep2 step2 = new NNetStep2();
+        GenerateLabelled step2 = new GenerateLabelled();
         step2.create(dataPath, outputDirectoryBase, failThreshold, collectorCount);
     }
 

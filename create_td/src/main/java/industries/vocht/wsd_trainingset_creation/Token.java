@@ -21,31 +21,25 @@ import java.security.InvalidParameterException;
  */
 public class Token {
 
-    private TokenizerConstants.Type type;   // the type of the token (see tokenizer)
-    private String text;                    // token text
-    private int synid;                      // synset id if applicable
-    private PennType pennType;              // penn tag
+    private String text;    // token text
+    private String tag;     // penn tag
 
     public Token() {
     }
 
-    public Token(TokenizerConstants.Type type, String text) {
-        this.type = type;
+    public Token(String text) {
         this.text = text;
-        this.pennType = PennType.UNC;
-        this.synid = -1;
+        this.tag = "UNC";  // unknown tag marker
     }
 
-    public Token(String text, TokenizerConstants.Type type, PennType pennType) {
+    public Token(String text, String tag) {
         if (text == null || text.length() == 0)
             throw new InvalidParameterException("invalid token (null or empty)");
-        if (pennType == null)
-            throw new InvalidParameterException("invalid type (null)");
+        if (tag == null)
+            throw new InvalidParameterException("invalid tag (null)");
 
-        this.type = type;
         this.text = text;
-        this.pennType = pennType;
-        this.synid = -1;
+        this.tag = tag;
     }
 
     // return true if this token is all text (i.e. no numbers)
@@ -71,29 +65,14 @@ public class Token {
         this.text = text;
     }
 
-    public PennType getPennType() {
-        return pennType;
+    public String getTag() {
+        return tag;
     }
 
-    public void setPennType(PennType pennType) {
-        this.pennType = pennType;
-    }
-
-    public int getSynid() {
-        return synid;
-    }
-
-    public void setSynid(int synid) {
-        this.synid = synid;
+    public void setTag(String tag) {
+        this.tag = tag;
     }
 
 
-    public TokenizerConstants.Type getType() {
-        return type;
-    }
-
-    public void setType(TokenizerConstants.Type type) {
-        this.type = type;
-    }
 }
 

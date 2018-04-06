@@ -15,6 +15,10 @@ Creates a Java set in `./dist/` by running
 gradle clean build setup
 ```
 
+## supported training files
+Added support for reading `.txt`, `.gz` and Peter's `.parsed` file formats for setting up
+Unlabelled training data
+
 ## python Keras DNN
 
 The processed data is then used to train an LSTM using Keras/Tensorflow that can be loaded to get a neural network that will label the correct Synset ID (according to the lexicon) and assing a Synset ID to an ambiguous noun.

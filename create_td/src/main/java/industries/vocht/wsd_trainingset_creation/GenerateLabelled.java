@@ -23,9 +23,9 @@ import java.util.stream.Collectors;
  * and output a fully labelled data-set using this new data
  *
  */
-public class NNetStep2 {
+public class GenerateLabelled {
 
-    public NNetStep2() {
+    public GenerateLabelled() {
     }
 
     /**
@@ -544,7 +544,6 @@ public class NNetStep2 {
      * @param wordPlural (optional, can be null), the plural of word
      * @param collectorCount the number of top frequencies maximum to return (or zero for no limites)
      * @return a list of word frequencies
-     * @throws IOException
      */
     private List<WordWithFrequency> gatherFrequencies( String filename, String word, String wordPlural, int collectorCount ) throws IOException {
         // gather frequencies
@@ -594,7 +593,6 @@ public class NNetStep2 {
      * @param word the word to ignore, the original focus word
      * @param wordPlural (optional, can be null), the plural of word
      * @param vectorLookup the vector of top words
-     * @throws IOException
      */
     private void getSuccessRate(String filename, String word, String wordPlural, HashSet<String> vectorLookup) throws IOException {
         // read line by line

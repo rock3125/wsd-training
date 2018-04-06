@@ -52,12 +52,12 @@ public class Tokenizer extends TokenizerConstants {
                 }
 
                 if ( tokenHandled )
-                    tokenList.add( new Token(Type.Space, " ") );
+                    tokenList.add( new Token(" ") );
 
                 // add full-stops?
                 while ( isFullStop(ch) && i < length ) {
                     tokenHandled = true;
-                    tokenList.add(new Token(Type.FullStop, "."));
+                    tokenList.add(new Token("."));
                     i = i + 1;
                     if ( i < length ) ch = chArray[i];
                 }
@@ -65,7 +65,7 @@ public class Tokenizer extends TokenizerConstants {
                 // add hyphens?
                 while ( isHyphen(ch) && i < length ) {
                     tokenHandled = true;
-                    tokenList.add(new Token(Type.Hyphen, "-"));
+                    tokenList.add(new Token("-"));
                     i = i + 1;
                     if ( i < length ) ch = chArray[i];
                 }
@@ -73,7 +73,7 @@ public class Tokenizer extends TokenizerConstants {
                 // add single quotes?
                 while ( isSingleQuote(ch) && i < length ) {
                     tokenHandled = true;
-                    tokenList.add(new Token(Type.SQuote, "'"));
+                    tokenList.add(new Token("'"));
                     i = i + 1;
                     if ( i < length ) ch = chArray[i];
                 }
@@ -81,7 +81,7 @@ public class Tokenizer extends TokenizerConstants {
                 // add single quotes?
                 while ( isDoubleQuote(ch) && i < length ) {
                     tokenHandled = true;
-                    tokenList.add(new Token(Type.DQuote, "\""));
+                    tokenList.add(new Token("\""));
                     i = i + 1;
                     if ( i < length ) ch = chArray[i];
                 }
@@ -89,7 +89,7 @@ public class Tokenizer extends TokenizerConstants {
                 // add special characters ( ) etc.
                 while ( isSpecialCharacter(ch) && i < length ) {
                     tokenHandled = true;
-                    tokenList.add(new Token( Type.Special, Character.toString(ch) ));
+                    tokenList.add(new Token( Character.toString(ch) ));
                     i = i + 1;
                     if ( i < length ) ch = chArray[i];
                 }
@@ -97,7 +97,7 @@ public class Tokenizer extends TokenizerConstants {
                 // add punctuation ! ? etc.
                 while ( isPunctuation(ch) && i < length ) {
                     tokenHandled = true;
-                    tokenList.add(new Token( Type.Punctuation, Character.toString(ch) ));
+                    tokenList.add(new Token( Character.toString(ch) ));
                     i = i + 1;
                     if ( i < length ) ch = chArray[i];
                 }
@@ -111,7 +111,7 @@ public class Tokenizer extends TokenizerConstants {
                     if ( i < length ) ch = chArray[i];
                 }
                 if ( helper.length() > 0 )
-                    tokenList.add( new Token(Type.Number, helper.toString()) );
+                    tokenList.add( new Token(helper.toString()) );
 
                 // text processor
                 helper.setLength(0);
@@ -122,7 +122,7 @@ public class Tokenizer extends TokenizerConstants {
                     if ( i < length ) ch = chArray[i];
                 }
                 if ( helper.length() > 0 )
-                    tokenList.add( new Token(Type.Text, helper.toString()) );
+                    tokenList.add( new Token(helper.toString()) );
 
                 // discard unknown token?
                 if ( !tokenHandled ) {

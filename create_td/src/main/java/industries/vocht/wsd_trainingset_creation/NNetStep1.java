@@ -118,7 +118,7 @@ public class NNetStep1 {
                                               maxFileSizeInBytes, lineCounter, map, focus);
 
                 // deal with gz files
-                } else if (file.getAbsolutePath().endsWith("*.gz")) {
+                } else if (file.getAbsolutePath().endsWith(".gz")) {
 
                     String filename = file.getAbsolutePath();
                     System.out.println("parsing and analysing " + filename);

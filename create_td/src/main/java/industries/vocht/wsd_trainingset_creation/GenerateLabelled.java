@@ -34,11 +34,12 @@ public class GenerateLabelled {
      * @param output_directories where to write the resulting files
      * @param failThreshold the % at which to split success samples vs. failed samples (default 66.0)
      * @param collectorCount how many top frequency items to collect / keep (default: 2000)
+     * @param minUnlabelledDataRequired the min number of samples required for an unlabelled set to be used
      * @param wordArray an optional list of words to focus on (can be null)
      * @throws IOException file error
      */
-    public void create( String dataPath, String output_directories, double failThreshold,
-                        int collectorCount, String... wordArray ) throws IOException {
+    public void create(String dataPath, String output_directories, double failThreshold,
+                       int collectorCount, int minUnlabelledDataRequired, String... wordArray) throws IOException {
 
         System.out.println("step 2: generating labelled data from unlabelled in " + output_directories);
 
@@ -100,8 +101,6 @@ public class GenerateLabelled {
                 continue;
             }
 
-            System.out.println("processing word " + word);
-
             // gather frequencies
             String wordPlural = map.get(word).getWordPlural();
             List<WordWithFrequency> wordWithFrequencyList = gatherFrequencies(
@@ -112,8 +111,14 @@ public class GenerateLabelled {
                     wordWithFrequencyList.stream().map(WordWithFrequency::getWord).collect(Collectors.toCollection(HashSet::new));
 
             // get the success rate for the initial coverage
-            getSuccessRate( inputFilename(nnetUnlabelledDirectory, word), word, wordPlural, vectorLookup);
+            int trainingSetSize = getSuccessRate(inputFilename(nnetUnlabelledDirectory, word), word, wordPlural, vectorLookup);
+            if (trainingSetSize < minUnlabelledDataRequired) {
+                System.out.println("skipping word \"" + word + "\", not enough training data (min required " + minUnlabelledDataRequired +
+                                   ", actual found " + trainingSetSize + ")");
+                continue;
+            }
 
+            System.out.println("processing word " + word);
 
             // rate the set iteratively until it stabalises
             WordnetAmbiguousSet ambiguousSet = map.get(word);
@@ -125,7 +130,6 @@ public class GenerateLabelled {
             boolean stable;
             do {
 
-                System.out.println(word + ":iteration " + iteration);
                 iteration = iteration + 1;
 
                 // calculate the success rate given Peter's lexicon
@@ -322,7 +326,10 @@ public class GenerateLabelled {
         int numMatches = 0;
         int numNotMatches = 0;
         int numAmbiguous = 0;
-        try ( BufferedReader br = new BufferedReader(new FileReader(inputFilename(nnetUnlabelledDirectory, word)) ) ) {
+
+        int[] sampleCounts = new int[set.size()];  // keep track of each sample's count
+
+        try (BufferedReader br = new BufferedReader(new FileReader(inputFilename(nnetUnlabelledDirectory, word)))) {
 
             // for each line in the wiki training set
             for (String line; (line = br.readLine()) != null; ) {
@@ -347,19 +354,24 @@ public class GenerateLabelled {
                     // is this a mono example?
                     int numLargerThanZero = 0;
                     int bestCount = -1;
-                    for ( int i = 0; i < counts.length; i++ ) {
+                    int bestCountIndex = -1;
+                    for (int i = 0; i < counts.length; i++) {
                         int count = counts[i];
                         if ( count > bestCount ) {
                             bestCount = count;
+                            bestCountIndex = i;
                             numLargerThanZero = 1;
-                        } else  if ( count == bestCount ) {
+                        } else  if (count == bestCount) {
                             numLargerThanZero = numLargerThanZero + 1;
                         }
                     }
 
                     // exactly one?
-                    if ( numLargerThanZero == 1 ) {
+                    if (numLargerThanZero == 1) {
                         numMatches = numMatches + 1;
+                        if (bestCountIndex >= 0 && bestCountIndex < sampleCounts.length) {
+                            sampleCounts[bestCountIndex] += 1;
+                        }
                     } else if ( numLargerThanZero == 0 ) {
                         numNotMatches = numNotMatches + 1;
                     } else if ( numLargerThanZero > 1 ) {
@@ -375,10 +387,16 @@ public class GenerateLabelled {
 
         int total = numMatches + numNotMatches + numAmbiguous;
         StringBuilder sb = new StringBuilder();
-        sb.append("// " + word + ":========================================================================\n");
-        sb.append("// " + word + ":matched:" + numMatches + ", ambiguous:" + numAmbiguous + "\n");
-        sb.append("// " + word + ":matched rate  :" + ((double)(numMatches * 100) / (double)total) + "\n");
-        sb.append("// " + word + ":non match rate:" + ((double)(numAmbiguous * 100) / (double)total) + "\n");
+        sb.append("// ").append(word).append(":========================================================================\n");
+        sb.append("// ").append(word).append(":matched:").append(numMatches).append(", ambiguous:").append(numAmbiguous).append("\n");
+        sb.append("// ").append(word).append(":matched rate  :").append(((double)(numMatches * 100) / (double)total)).append("\n");
+        sb.append("// ").append(word).append(":non match rate:").append(((double)(numAmbiguous * 100) / (double)total)).append("\n");
+        sb.append("// ").append(word).append(": sample counts: ");
+        for (int i = 0; i < sampleCounts.length; i++) {
+            sb.append(word).append("[").append(i).append("] = ").append(sampleCounts[i]).append(", ");
+        }
+        sb.setLength(sb.length() - 2);
+        sb.append("\n");
         sb.append("// syns\n");
         int counter = 0;
         for ( HashSet<String> setItem : originalSet ) {
@@ -402,9 +420,8 @@ public class GenerateLabelled {
             counter = counter + 1;
         }
 
-        sb.append("// " + word + ":========================================================================\n");
+        sb.append("// ").append(word).append(":========================================================================\n");
 
-        System.out.println(word + ":========================================================================");
         System.out.println(word + ":matched:" + numMatches + ", ambiguous:" + numAmbiguous);
         System.out.println(word + ":matched rate  :" + ((double)(numMatches * 100) / (double)total));
         System.out.println(word + ":non match rate:" + ((double)(numAmbiguous * 100) / (double)total));
@@ -593,13 +610,14 @@ public class GenerateLabelled {
      * @param word the word to ignore, the original focus word
      * @param wordPlural (optional, can be null), the plural of word
      * @param vectorLookup the vector of top words
+     * @return the total number of items in the set
      */
-    private void getSuccessRate(String filename, String word, String wordPlural, HashSet<String> vectorLookup) throws IOException {
+    private int getSuccessRate(String filename, String word, String wordPlural, HashSet<String> vectorLookup) throws IOException {
         // read line by line
         // open the unlabelled set for re-reading
         int numSuccess = 0;
         int numFailed = 0;
-        try ( BufferedReader br = new BufferedReader(new FileReader(filename) ) ) {
+        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
 
             // for each line in the unlabelled training set
             for (String line; (line = br.readLine()) != null; ) {
@@ -635,6 +653,8 @@ public class GenerateLabelled {
         System.out.println(word + ":success:" + numSuccess + ", failed:" + numFailed);
         System.out.println(word + ":success rate:" + ((double)(numSuccess * 100) / (double)total));
         System.out.println(word + ":fail rate:" + ((double)(numFailed * 100) / (double)total));
+
+        return total;
     }
 
 }

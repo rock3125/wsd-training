@@ -74,6 +74,10 @@ public class Main {
         double failThreshold = Double.parseDouble(settings.getValueByKey("failThreshold"));
         System.out.println("failThreshold=" + failThreshold);
 
+        // minimum required unlabelled training set size for inclusion in training
+        int minUnlabelledDataRequired = Integer.parseInt(settings.getValueByKey("minUnlabelledDataRequired"));
+        System.out.println("minUnlabelledDataRequired=" + minUnlabelledDataRequired);
+
         // step 1.  turn unlabelled data into labelled sets
         // parse the text files, look for nouns that are in the lexicon (see data/lexicon)
         // and start collecting related data
@@ -81,7 +85,7 @@ public class Main {
         step1.create(dataPath, trainingSetFileFolder, outputDirectoryBase, maxFileSizeInBytes, windowSize);
 
         GenerateLabelled step2 = new GenerateLabelled();
-        step2.create(dataPath, outputDirectoryBase, failThreshold, collectorCount);
+        step2.create(dataPath, outputDirectoryBase, failThreshold, collectorCount, minUnlabelledDataRequired);
     }
 
 

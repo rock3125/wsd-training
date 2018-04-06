@@ -105,24 +105,29 @@ public class NNetStep1 {
         File[] listOfFiles = folder.listFiles();
         if (listOfFiles != null) {
             for (File file : listOfFiles) {
+
+                // deal with text files
                 if (file.getAbsolutePath().endsWith(".txt")) {
 
                     System.out.println("parsing and analysing " + file.getAbsolutePath());
                     String textFileContent = new String(Files.readAllBytes(Paths.get(file.getAbsolutePath())));
                     lineCounter = parseSingle(parser, file.getAbsolutePath(), textFileContent, windowSize,
-                            openFileSet, openFileSize, nnetUnlabelledDirectory, undesirables,
-                            maxFileSizeInBytes, lineCounter, map, focus);
+                                              openFileSet, openFileSize, nnetUnlabelledDirectory, undesirables,
+                                              maxFileSizeInBytes, lineCounter, map, focus);
 
+                // deal with gz files
                 } else if (file.getAbsolutePath().endsWith("*.gz")) {
 
-                    GZIPInputStream gzip = new GZIPInputStream(new FileInputStream(file.getAbsolutePath()));
-                    BufferedReader br = new BufferedReader(new InputStreamReader(gzip));
+                    String filename = file.getAbsolutePath();
+                    System.out.println("parsing and analysing " + filename);
+                    BufferedReader br = new BufferedReader(new InputStreamReader(
+                                                new GZIPInputStream(new FileInputStream(filename))));
                     String content;
                     while ((content = br.readLine()) != null) {
 
-                        lineCounter = parseSingle(parser, file.getAbsolutePath(), content, windowSize,
-                                openFileSet, openFileSize, nnetUnlabelledDirectory, undesirables,
-                                maxFileSizeInBytes, lineCounter, map, focus);
+                        lineCounter = parseSingle(parser, filename, content, windowSize,
+                                                  openFileSet, openFileSize, nnetUnlabelledDirectory,
+                                                  undesirables, maxFileSizeInBytes, lineCounter, map, focus);
 
                     }
                 }

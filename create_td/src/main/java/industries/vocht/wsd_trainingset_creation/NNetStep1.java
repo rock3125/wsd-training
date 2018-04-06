@@ -15,6 +15,7 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.*;
+import java.util.zip.GZIPInputStream;
 
 /**
  * Created by peter on 25/05/16.
@@ -99,8 +100,6 @@ public class NNetStep1 {
 
         int lineCounter = 0;
 
-        int minValidSize = (windowSize / 2); // min number of items needed for a valid training set
-
         // for each file that ends in .txt
         File folder = new File(trainingSetFileDirectory);
         File[] listOfFiles = folder.listFiles();
@@ -109,112 +108,25 @@ public class NNetStep1 {
                 if (file.getAbsolutePath().endsWith(".txt")) {
 
                     System.out.println("parsing and analysing " + file.getAbsolutePath());
-
                     String textFileContent = new String(Files.readAllBytes(Paths.get(file.getAbsolutePath())));
-                    try {
-                        List<Sentence> sentenceList = parser.parse(textFileContent);
-                        if (sentenceList == null) {
-                            System.out.println("empty: " + file.getAbsolutePath());
-                            continue;
-                        }
+                    lineCounter = parseSingle(parser, file.getAbsolutePath(), textFileContent, windowSize,
+                            openFileSet, openFileSize, nnetUnlabelledDirectory, undesirables,
+                            maxFileSizeInBytes, lineCounter, map, focus);
 
-                        System.out.println("sentences: " + sentenceList.size() + ", for " + file.getAbsolutePath());
+                } else if (file.getAbsolutePath().endsWith("*.gz")) {
 
-                        for (Sentence sentence : sentenceList ) {
+                    GZIPInputStream gzip = new GZIPInputStream(new FileInputStream(file.getAbsolutePath()));
+                    BufferedReader br = new BufferedReader(new InputStreamReader(gzip));
+                    String content;
+                    while ((content = br.readLine()) != null) {
 
-                            // for each token
-                            List<Token> tokenList = sentence.getTokenList();
-                            int size = tokenList.size();
+                        lineCounter = parseSingle(parser, file.getAbsolutePath(), content, windowSize,
+                                openFileSet, openFileSize, nnetUnlabelledDirectory, undesirables,
+                                maxFileSizeInBytes, lineCounter, map, focus);
 
-                            for (int i = 0; i < size; i++) {
-
-                                // is this token / word one of the ambiguous words from Peter's lexicon?
-                                Token token = tokenList.get(i);
-                                String part = token.getText();
-                                String pennType = token.getPennType().toString();
-                                if (focus.contains(part.toLowerCase()) && pennType.startsWith("NN")) {
-                                    // get the set
-                                    WordnetAmbiguousSet set = map.get(part.toLowerCase());
-
-                                    // construct a window left and right of the word
-                                    int left = i - windowSize;
-                                    if (left < 0) left = 0;
-                                    for (int j = left; j < i; j++) {
-                                        String punc = tokenList.get(j).getText();
-                                        if (punc.equals(".")) {
-                                            left = j + 1;
-                                        }
-                                    }
-                                    int right = i + windowSize;
-                                    if (right + 1 >= size) {
-                                        right = size - 1;
-                                    }
-
-                                    // 1.5 window size at least
-                                    if (Math.abs(left - right) >= minValidSize) {
-
-                                        // get the singular version
-                                        String wordStr = part.toLowerCase();
-                                        String plural = set.getWordPlural();
-                                        if (plural != null && plural.equals(wordStr)) {
-                                            wordStr = set.getWord();
-                                        }
-                                        Long fileSize = openFileSize.get(wordStr);
-                                        PrintWriter writer = openFileSet.get(wordStr);
-                                        if (writer == null) {
-                                            writer = new PrintWriter(outputFilename(nnetUnlabelledDirectory, wordStr));
-                                            openFileSet.put(wordStr, writer);
-                                            fileSize = 0L;
-                                            openFileSize.put(wordStr, fileSize);
-                                        }
-
-                                        // a hit for each syn is counted, we don't want any crossovers between synsets
-                                        int count = 0;
-                                        StringBuilder sb = new StringBuilder();
-                                        int j;
-                                        for (j = left; j <= right; j++) {
-                                            token = tokenList.get(j);
-                                            if (token.isText()) {
-                                                String part_j = token.getText().toLowerCase();
-                                                if (!undesirables.isUndesirable(part_j)) {
-                                                    count = count + 1;
-                                                    if (sb.length() > 0) {
-                                                        sb.append(",");
-                                                    }
-                                                    sb.append(part_j);
-                                                } // if not undesirable
-                                            } else if (token.getText().equals(".")) {
-                                                break; // stop collecting at end of sentence events
-                                            }
-                                        }
-                                        // a valid piece of text to collect?
-                                        if (count >= minValidSize && (maxFileSizeInBytes <= 0 || fileSize < maxFileSizeInBytes)) {
-                                            sb.append("\n");
-                                            writer.write(sb.toString());
-                                            fileSize = fileSize + sb.length();
-                                            openFileSize.put(wordStr, fileSize);
-                                        }
-
-                                    } // if window size big enough
-
-                                } // if is focus word
-
-                            } // for each word
-
-                            lineCounter = lineCounter + 1;
-
-                            // display periodic progress
-                            if (lineCounter % 100_000 == 0) {
-                                System.out.println("   lines processed: " + lineCounter);
-                            } // if lineCounter hit
-
-                        }
-
-                    } catch(Exception ex){
-                        System.out.println("error parsing file:" + ex.toString());
                     }
+                }
 
-                } // io try
 
             }
         }
@@ -223,9 +135,147 @@ public class NNetStep1 {
         for ( PrintWriter writer : openFileSet.values() ) {
             writer.close();
         }
-
     }
 
+
+    /**
+     * parse a single block of text and process it according to our needs for ambiguous entities
+     *
+     * @param parser the text parser to use
+     * @param filename the name of the file for info purposes
+     * @param textFileContent the text to process
+     * @param windowSize the window size around text for finding match words
+     * @param openFileSet the set of files open for writing data to for training
+     * @param openFileSize the size of the files open for writing as a cutoff
+     * @param nnetUnlabelledDirectory the directory to create files in for training
+     * @param undesirables undesirables detection class
+     * @param maxFileSizeInBytes max file size for collecting data
+     * @param lineCounter a counter for tracking where we are (updated)
+     * @param map storage for the ambiguous entities to look for
+     * @param focus an exclusion set
+     * @return the updated lineCounter
+     */
+    private int parseSingle(NLPParser parser, String filename, String textFileContent,
+                             int windowSize, Map<String, PrintWriter> openFileSet, Map<String, Long> openFileSize,
+                             String nnetUnlabelledDirectory, Undesirables undesirables,
+                             long maxFileSizeInBytes, int lineCounter,
+                             Map<String, WordnetAmbiguousSet> map, Set<String> focus) {
+
+        int minValidSize = (windowSize / 2); // min number of items needed for a valid training set
+
+        try {
+            List<Sentence> sentenceList = parser.parse(textFileContent);
+            if (sentenceList == null) {
+                System.out.println("empty: " + filename);
+                return lineCounter;
+            }
+
+            System.out.println("sentences: " + sentenceList.size() + ", for " + filename);
+
+            for (Sentence sentence : sentenceList ) {
+
+                // for each token
+                List<Token> tokenList = sentence.getTokenList();
+                int size = tokenList.size();
+
+                for (int i = 0; i < size; i++) {
+
+                    // is this token / word one of the ambiguous words from Peter's lexicon?
+                    Token token = tokenList.get(i);
+                    String part = token.getText();
+                    String pennType = token.getPennType().toString();
+                    if (focus.contains(part.toLowerCase()) && pennType.startsWith("NN")) {
+                        // get the set
+                        WordnetAmbiguousSet set = map.get(part.toLowerCase());
+
+                        // construct a window left and right of the word
+                        int left = i - windowSize;
+                        if (left < 0) left = 0;
+                        for (int j = left; j < i; j++) {
+                            String punc = tokenList.get(j).getText();
+                            if (punc.equals(".")) {
+                                left = j + 1;
+                            }
+                        }
+                        int right = i + windowSize;
+                        if (right + 1 >= size) {
+                            right = size - 1;
+                        }
+
+                        // 1.5 window size at least
+                        if (Math.abs(left - right) >= minValidSize) {
+
+                            // get the singular version
+                            String wordStr = part.toLowerCase();
+                            String plural = set.getWordPlural();
+                            if (plural != null && plural.equals(wordStr)) {
+                                wordStr = set.getWord();
+                            }
+                            Long fileSize = openFileSize.get(wordStr);
+                            PrintWriter writer = openFileSet.get(wordStr);
+                            if (writer == null) {
+                                writer = new PrintWriter(outputFilename(nnetUnlabelledDirectory, wordStr));
+                                openFileSet.put(wordStr, writer);
+                                fileSize = 0L;
+                                openFileSize.put(wordStr, fileSize);
+                            }
+
+                            // a hit for each syn is counted, we don't want any crossovers between synsets
+                            int count = 0;
+                            StringBuilder sb = new StringBuilder();
+                            int j;
+                            for (j = left; j <= right; j++) {
+                                token = tokenList.get(j);
+                                if (token.isText()) {
+                                    String part_j = token.getText().toLowerCase();
+                                    if (!undesirables.isUndesirable(part_j)) {
+                                        count = count + 1;
+                                        if (sb.length() > 0) {
+                                            sb.append(",");
+                                        }
+                                        sb.append(part_j);
+                                    } // if not undesirable
+                                } else if (token.getText().equals(".")) {
+                                    break; // stop collecting at end of sentence events
+                                }
+                            }
+                            // a valid piece of text to collect?
+                            if (count >= minValidSize && (maxFileSizeInBytes <= 0 || fileSize < maxFileSizeInBytes)) {
+                                sb.append("\n");
+                                writer.write(sb.toString());
+                                fileSize = fileSize + sb.length();
+                                openFileSize.put(wordStr, fileSize);
+                            }
+
+                        } // if window size big enough
+
+                    } // if is focus word
+
+                } // for each word
+
+                lineCounter = lineCounter + 1;
+
+                // display periodic progress
+                if (lineCounter % 100_000 == 0) {
+                    System.out.println("   lines processed: " + lineCounter);
+                } // if lineCounter hit
+
+            }
+
+        } catch(Exception ex){
+            System.out.println("error parsing file:" + ex.toString());
+        }
+        return lineCounter;
+    }
+
+
+    /**
+     * create an unlabelled filename for the given word
+     *
+     * @param nnetUnlabelledDirectory the directory we start with
+     * @param word the word we're using
+     * @return the combined name for writing to
+     */
     private String outputFilename( String nnetUnlabelledDirectory, String word ) {
         return nnetUnlabelledDirectory + word + "-trainingset.csv";
     }

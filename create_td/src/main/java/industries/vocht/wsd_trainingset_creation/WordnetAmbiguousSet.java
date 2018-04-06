@@ -308,4 +308,6 @@ public class WordnetAmbiguousSet {
     public void setUnknownList(List<HashMap<String, Integer>> unknownList) {
         this.unknownList = unknownList;
     }
+
 }
+

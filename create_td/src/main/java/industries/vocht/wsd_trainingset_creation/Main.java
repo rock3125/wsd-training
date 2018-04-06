@@ -32,7 +32,7 @@ public class Main {
 
         if ( args.length != 2 ) {
             System.out.println("Create training data for WSD nnets");
-            System.out.println("usage: /path/to/text/files/*.txt /output/path/to/write/to");
+            System.out.println("usage: /path/to/text/files/*.txt|*.gz /output/path/to/write/to");
             System.exit(1);
         }
         Main creator = new Main();

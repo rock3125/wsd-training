@@ -38,7 +38,13 @@ public class NLPParser {
         this.init();
     }
 
-    public List<Sentence> parse( String text ) throws Exception {
+    /**
+     * sentence split and tokenize a block of text
+     *
+     * @param text the text to process
+     * @return a list of sentences
+     */
+    public List<Sentence> parse(String text) throws Exception {
         List<Sentence> resultList = new ArrayList<>();
         if ( text != null && text.length() > 0 ) {
             Tokenizer tokenizer = new Tokenizer();
